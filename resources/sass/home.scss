@@ -1,0 +1,365 @@
+@import "_fonts";
+@import "_colors";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/grid";
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'BebasNeue', 'Arial', sans-serif;
+	color: #fff;
+	background-color: $background-blue;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	height: 100%;
+	max-height: 100%;
+	width: 80% !important;
+}
+
+header {
+	width: 100%;
+	height: 15%;
+
+    .logo {
+    	height: 100%;
+    	background-color: $home-purple;
+		-moz-box-sizing: border-box;
+    	box-sizing: border-box;
+		background-clip: content-box;
+    }
+}
+
+
+.home-link {
+	text-decoration: none;
+	color: #fff;
+}
+
+$div-height: 1/3*100%;
+
+nav {
+	width: 100%;
+	height: 65%;
+
+	.nav-box {
+		height: $div-height;
+		-moz-box-sizing: border-box;
+    	box-sizing: border-box;
+
+		.find, .make, .saved {
+			transition: background-color 0.3s ease;
+			height: 100%;
+			-moz-box-sizing: border-box;
+    		box-sizing: border-box;
+    		background-clip: content-box;
+    		border-radius: 12px;
+    		display: flex;
+
+    		.home-link {
+				display: flex;
+				width: 100%;
+				height: 100%;
+    		}
+
+    		.action-icon {
+    			height: 100%;
+    			display: flex;
+			    align-items: center;
+
+    			.outer-circle {
+    				border-radius: 100%;
+    				display: flex;
+				    justify-content: center;
+				    align-items: center;
+
+    				.inner-circle {
+						border-radius: 100%;
+						background-size: 50%;
+						background-repeat: no-repeat;
+	   			 		background-position: center;
+    				}
+    			}
+    		}
+
+    		.action-text {
+    			height: 100%;
+				display: flex;
+				justify-content: center;
+
+    			span:nth-child(1) {
+					line-height: 90%;
+    			}
+
+    			span:nth-child(2) {
+    				line-height: 80%;
+    			}
+    		}
+		}
+
+		.find {
+			background-color: rgba(2, 214, 214, 0.06);
+			.outer-circle {
+				background-image: linear-gradient($player-blue, rgba(2, 214, 214, 0));
+				.inner-circle {
+					background-color: $player-blue;
+					background-image: url('../images/search.svg');
+				}
+			}
+			.action-text span:nth-child(2) {
+				color: $player-blue;
+			}
+		}
+		.find:hover {
+			background-color: rgba(2, 214, 214, 0.16);
+		}
+
+		.make {
+			background-color: rgba(203, 45, 223, 0.1);
+			.outer-circle {
+				background-image: linear-gradient($home-purple, rgba(0, 123, 121, 0));
+				.inner-circle {
+					background-color: $home-purple;
+					background-image: url('../images/add-white.svg');
+				}
+			}
+			.action-text span:nth-child(2) {
+				color: $home-purple;
+			}
+		}
+		.make:hover {
+			background-color: rgba(203, 45, 223, 0.2);
+		}
+
+		.saved {
+			background-color: rgba(233, 0, 82, 0.26);
+			.outer-circle {
+				background-image: linear-gradient($delete-red, rgba(0, 123, 121, 0));
+				.inner-circle {
+					background-color: $delete-red;
+					background-image: url('../images/heart.svg');
+				}
+			}
+			.action-text span:nth-child(2) {
+				color: $delete-red;
+			}
+		}
+		.saved:hover {
+			background-color: rgba(233, 0, 82, 0.36);
+		}
+	}
+}
+
+.profile {
+	width: 100%;
+	height: 20%;
+
+    .profile-content {
+    	height: 100%;
+		-moz-box-sizing: border-box;
+    	box-sizing: border-box;
+    	background-clip: content-box;
+    	display: flex;
+	    justify-content: center;
+	    align-items: center;
+
+	    .home-link {
+	    	display: flex;
+	    }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+	header .logo {
+		padding: 20px 5px 10px 5px;
+	}
+	.profile .profile-content {
+		padding: 10px 5px 20px 5px;
+		font-size: 3rem;
+
+		img {
+			width: 60px;
+			padding-right: 25px;
+		}
+	}
+	nav .nav-box {
+		padding: 10px 0;
+
+		.find, .make, .saved {
+			padding: 15px 5px;
+
+			.action-icon {
+				width: 50%;
+				justify-content: center;
+
+				.outer-circle {
+    				height: 85px;
+    				width: 85px;
+
+    				.inner-circle {
+						height: 70px;
+    					width: 70px;
+    				}
+    			}
+			}
+
+			.action-text {
+				flex-direction: column;
+				width: 50%;
+
+				span:nth-child(1) {
+					font-size: 4rem;
+					line-height: 90%;
+				}
+				span:nth-child(2) {
+					font-size: 3rem;
+					line-height: 80%;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	header .logo {
+		padding: 25px 5px 15px 5px;
+	}
+	.profile .profile-content {
+		padding: 15px 5px 25px 5px;
+		font-size: 4rem;
+
+		img {
+			width: 80px;
+			padding-right: 40px;
+		}
+	}
+	nav .nav-box {
+		padding: 5px 0;
+
+		.find, .make, .saved {
+			padding: 10px 5px;
+
+			.home-link {
+				justify-content: center;
+    		}
+
+			.action-icon {
+				justify-content: flex-end;
+				padding-right: 50px;
+				width: auto;
+
+				.outer-circle {
+    				height: 95px;
+    				width: 95px;
+
+    				.inner-circle {
+						height: 80px;
+    					width: 80px;
+    				}
+    			}
+			}
+
+			.action-text {
+				flex-direction: row;
+				width: auto;
+				justify-content: flex-start;
+				align-items: center;
+				width: 375px;
+
+				span:nth-child(1) {
+					font-size: 5rem;
+					padding-right: 20px;
+					line-height: 100%;
+				}
+				span:nth-child(2) {
+					font-size: 5rem;
+					line-height: 100%;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	header .logo {
+		padding: 15px 5px 5px 5px;
+	}
+	.profile .profile-content {
+		padding: 5px 5px 15px 5px;
+		font-size: 2rem;
+
+		img {
+			width: 40px;
+			padding-right: 15px;
+		}
+	}
+	nav .nav-box {
+		padding: 5px 0;
+
+		.find, .make, .saved {
+			padding: 15px 5px;
+
+			.action-icon {
+				justify-content: center;
+				width: 50%;
+
+				.outer-circle {
+    				height: 75px;
+    				width: 75px;
+
+    				.inner-circle {
+						height: 60px;
+    					width: 60px;
+    				}
+    			}
+			}
+
+			.action-text {
+				flex-direction: column;
+				width: 50%;
+				span:nth-child(1) {
+					font-size: 3rem;
+					line-height: 90%;
+				}
+				span:nth-child(2) {
+					font-size: 2.5rem;
+					line-height: 80%;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	nav .nav-box {
+		.find, .make, .saved {
+			.action-icon {
+				.outer-circle {
+    				height: 65px;
+    				width: 65px;
+
+    				.inner-circle {
+						height: 50px;
+    					width: 50px;
+    				}
+    			}
+			}
+			.action-text {
+				span:nth-child(1) {
+					font-size: 2.5rem;
+				}
+				span:nth-child(2) {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+}

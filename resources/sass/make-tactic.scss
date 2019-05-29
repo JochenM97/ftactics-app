@@ -1,0 +1,24 @@
+@import "_fonts";
+@import "_colors";
+@import "_nav";
+@import "_keyframes";
+@import "_container";
+@import "_toolbar";
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/grid";
+
+html, body, #stage-parent {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'BebasNeue', 'Arial', sans-serif;
+	color: #fff;
+	background-color: $background-blue;
+	margin: 0;
+	padding: 0;
+}
