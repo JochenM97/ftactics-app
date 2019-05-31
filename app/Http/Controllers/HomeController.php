@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\CustomTactic;
 
 class HomeController extends Controller
 {
@@ -57,5 +58,30 @@ class HomeController extends Controller
         User::where('id', $user_id)->update($data);
         return redirect('/')
         ->with('response', 'Profile updated successfully.');
+    }
+
+    public function saveTactic(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'data' => 'required',
+        ]);
+        $customtactic = new CustomTactic;
+        $customtactic->name = $request->input('name');
+        $customtactic->data = $request->input('data');
+
+        $user = Auth::user();
+        $customtactic->user_id = $user->id;
+
+        $customtactic->save();
+
+        return redirect('/')
+        ->with('response', 'Tactic added successfully.');
+    }
+
+    public function showSavedTactics()
+    {
+        $user = Auth::user();
+        $customtactics = CustomTactic::where('user_id', $user->id)->get();
+        return view('saved-tactics', ['customtactics' => $customtactics]);
     }
 }

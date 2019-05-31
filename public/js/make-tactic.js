@@ -431,19 +431,82 @@ deleteBtn.addEventListener("click", function()
 });
 
 var saveButton = document.getElementById("save-btn");
-saveButton.addEventListener("click", function() 
+var saveScreen = document.getElementById("save-screen");
+var closeScreen = document.getElementById("close-save-screen");
+var closeScreenContent = document.getElementById("save-screen-content");
+var submitTactic = document.getElementById("submit-tactic");
+
+closeScreen.addEventListener("click", function()
 {
-	var json = stage.toJSON();
-	saveText(json, "file.json" );
-	console.log(json);
+	saveScreen.style.height = "0%";
+
+	
+	closeScreenContent.style.opacity = "0";
+	setTimeout(function(){ closeScreenContent.style.display = "none"; }, 400);
+
+
+	//setTimeout(function(){ saveScreen.style.display = "none"; }, 300);
 });
 
-function saveText(text, filename){
-  var a = document.createElement('a');
-  a.setAttribute('href', 'data:text/plain;charset=utf-u,'+encodeURIComponent(text));
-  a.setAttribute('download', filename);
-  a.click()
-}
+saveButton.addEventListener("click", function() 
+{
+	// show save screen
+	saveScreen.style.height = "100%";
+	closeScreenContent.style.display = "block";
+	setTimeout(function(){ closeScreenContent.style.opacity = "1"; }, 100);
+	//closeScreenContent.style.opacity = "1";
+
+	// nieuwe definitieve save button on click event
+	
+	var tacticData = stage.toJSON();
+	tacticData = JSON.parse(tacticData);
+
+	var width = tacticData.attrs.width;
+  	var height = tacticData.attrs.height;
+  	var scaleX = tacticData.attrs.scaleX;
+  	var scaleY = tacticData.attrs.scaleY;
+  	var layers = [];
+
+	var keyframes = [width,height,scaleX,scaleY,layers];
+
+  	for(var i=0; i<tacticData.children.length; i++)
+  	{
+  		var layerObjects = tacticData.children[i];
+  		layers.push(i);
+  		layers[i] = [];
+
+  		for(var y=0; y<layerObjects.children.length; y++)
+  		{	
+  			var object = layerObjects.children[y];
+  			var objectParameters = {};
+
+  			if(object.attrs.objectType == "blue-player" || object.attrs.objectType == "red-player")
+  			{
+  				var objectX = object.attrs.x;
+  				var objectY = object.attrs.y;
+  				var objectType = object.attrs.objectType;
+  				var playerNumber = object.children[1].attrs.text;
+
+  				objectParameters = [objectX,objectY,objectType,playerNumber];
+
+  				layers[i][y] = objectParameters;
+  			}
+  			else
+  			{
+  				var objectX = object.attrs.x;
+  				var objectY = object.attrs.y;
+  				var objectType = object.attrs.objectType;
+  				objectParameters = [objectX,objectY,objectType];
+
+  				layers[i][y] = objectParameters;
+  			}
+  		}
+  	}
+  	var keyframes_json = Object.assign({}, keyframes);
+
+  	document.getElementById("data").value = encodeURIComponent(JSON.stringify(keyframes_json));
+});
+
 var addBtn = document.getElementById("add-frame");
 var removeBtn = document.getElementById("remove-frame");
 var keyframes = document.getElementById("keyframes");

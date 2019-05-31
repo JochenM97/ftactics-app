@@ -41,3 +41,8 @@ mix.sass('resources/sass/auth.scss', 'public/css')
     .options({
         processCssUrls: false
     });
+
+mix.sass('resources/sass/custom-tactics.scss', 'public/css')
+    .options({
+        processCssUrls: false
+    });

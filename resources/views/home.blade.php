@@ -40,7 +40,7 @@
         </div>
         <div class="nav-box">
             <div class="saved">
-                <a href="" class="home-link">
+                <a href="{{ url('/saved-tactics') }}" class="home-link">
                     <div class="action-icon">
                         <div class="outer-circle">
                             <div class="inner-circle"></div>

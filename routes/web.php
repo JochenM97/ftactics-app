@@ -24,3 +24,7 @@ Route::get('/login-register', function () {
 Route::get('/profile', 'HomeController@profile')->name('profile');
 
 Route::post('/save-profile/{id}', 'HomeController@saveProfile')->name('save-profile');
+
+Route::post('/save-tactic', 'HomeController@saveTactic')->name('save-tactic');
+
+Route::get('/saved-tactics', 'HomeController@showSavedTactics')->name('saved-tactics');
