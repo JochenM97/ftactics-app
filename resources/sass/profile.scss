@@ -1,7 +1,7 @@
-@import "_fonts";
-@import "_colors";
-@import "_nav";
-@import "_auth-form";
+@import "globals/_fonts";
+@import "globals/_colors";
+@import "organisms/_nav";
+@import "organisms/_auth-form";
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";

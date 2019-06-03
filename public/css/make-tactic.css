@@ -124,11 +124,11 @@ nav .save-box #delete-btn, nav .delete-box #delete-btn {
   -webkit-tap-highlight-color: transparent;
 }
 .keyframe-editor #add-frame {
-  background-image: url("../images/add-frame.svg");
+  background-image: url("../images/icons/add-frame.svg");
   background-position-x: left;
 }
 .keyframe-editor #remove-frame {
-  background-image: url("../images/remove-frame.svg");
+  background-image: url("../images/icons/remove-frame.svg");
   background-position-x: right;
 }
 
@@ -311,7 +311,7 @@ nav .save-box #delete-btn, nav .delete-box #delete-btn {
 }
 #toolbar #delete {
   display: none;
-  background-image: url("../images/delete.svg");
+  background-image: url("../images/icons/delete.svg");
 }
 #toolbar .active {
   background-color: #fff !important;

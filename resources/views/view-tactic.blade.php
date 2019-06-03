@@ -1,9 +1,11 @@
-@extends('layout', ['title' => ' - View tactic '.$customtactic->name])
+@extends('layout', ['title' => ' | View tactic '.$customtactic->name])
+
+@section('description', "Watch your own tactic to show your teammates or remove it if you don't need it anymore.")
 
 @section('content')
 <nav>
 	<div class="back-box">
-		<a href="{{ url('/saved-tactics') }}"><img src="{{ URL::to('/') }}/images/back-arrow.svg" alt="Back to last page button"></a>
+		<a href="{{ url('/saved-tactics') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
 	</div>
 	<header>
 		<h1>{{ $customtactic->name }}</h1>

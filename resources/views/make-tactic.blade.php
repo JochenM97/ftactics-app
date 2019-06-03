@@ -1,10 +1,12 @@
-@extends('layout', ['title' => ' - Make tactic'])
+@extends('layout', ['title' => ' | Make tactic'])
+
+@section('description', 'Make your own tactics with an easy to use, interactive and responsive editor.')
 
 @section('make-tactic')
 
 <div id="save-screen">
 	<div id="save-screen-content">
-		<img id="close-save-screen" src="{{ URL::to('/') }}/images/cancel.svg" alt="Close save screen button">
+		<img id="close-save-screen" src="{{ URL::to('/') }}/images/icons/cancel.svg" alt="Close save screen button">
 		<form method="POST" action="{{ route('save-tactic') }}">
         	@csrf
 			<div class="form-content">
@@ -19,7 +21,7 @@
 
 <nav>
 	<div class="back-box">
-		<a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/back-arrow.svg" alt="Back to last page button"></a>
+		<a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
 	</div>
 	<header>
 		<h1>MAKE TACTICS</h1>
@@ -41,9 +43,9 @@
 </div>
 
 <div id="toolbar">
-	<span id="blue-player"><img src="{{ URL::to('/') }}/images/add.svg" alt="Add blue player icon"><span class="amount" id="available-blue-players">5</span></span>
-	<span id="ball"><img src="{{ URL::to('/') }}/images/add.svg" alt="Add ball icon"><span class="amount" id="available-footballs">1</span></span>
-	<span id="red-player"><img src="{{ URL::to('/') }}/images/add.svg" alt="Add red player icon"><span class="amount" id="available-red-players">5</span></span>
+	<span id="blue-player"><img src="{{ URL::to('/') }}/images/icons/add.svg" alt="Add blue player icon"><span class="amount" id="available-blue-players">5</span></span>
+	<span id="ball"><img src="{{ URL::to('/') }}/images/icons/add.svg" alt="Add ball icon"><span class="amount" id="available-footballs">1</span></span>
+	<span id="red-player"><img src="{{ URL::to('/') }}/images/icons/add.svg" alt="Add red player icon"><span class="amount" id="available-red-players">5</span></span>
 	<span id="delete"></span>
 </div>
 

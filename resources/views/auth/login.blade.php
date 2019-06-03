@@ -1,12 +1,17 @@
-@extends('layout', ['title' => ' - Login'])
+@extends('layout', ['title' => ' | Login'])
+
+@section('description', 'Log in and start viewing and making more tactics.')
 
 @section('content')
+<div class="logo-box">
+    <div class="logo"></div>
+</div>
 <div class="form-wrapper">
     <form method="POST" action="{{ route('login') }}">
         @csrf
         
         <div class="form-content">
-            <a href="{{ url('/login-register') }}" class="back-btn"><img src="{{ URL::to('/') }}/images/back-arrow-black.svg" alt="Back to last page button"></a>
+            <a href="{{ url('/login-register') }}" class="back-btn"><img src="{{ URL::to('/') }}/images/icons/back-arrow-black.svg" alt="Back to last page button"></a>
 
             <header><h1>LOGIN</h1></header>
             

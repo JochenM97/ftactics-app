@@ -1065,7 +1065,7 @@ nav .nav-box .find .outer-circle {
 }
 nav .nav-box .find .outer-circle .inner-circle {
   background-color: #00E2DE;
-  background-image: url("../images/search.svg");
+  background-image: url("../images/icons/search.svg");
 }
 nav .nav-box .find .action-text span:nth-child(2) {
   color: #00E2DE;
@@ -1081,7 +1081,7 @@ nav .nav-box .make .outer-circle {
 }
 nav .nav-box .make .outer-circle .inner-circle {
   background-color: #CA2CDE;
-  background-image: url("../images/add-white.svg");
+  background-image: url("../images/icons/add-white.svg");
 }
 nav .nav-box .make .action-text span:nth-child(2) {
   color: #CA2CDE;
@@ -1097,7 +1097,7 @@ nav .nav-box .saved .outer-circle {
 }
 nav .nav-box .saved .outer-circle .inner-circle {
   background-color: #EE0054;
-  background-image: url("../images/heart.svg");
+  background-image: url("../images/icons/heart.svg");
 }
 nav .nav-box .saved .action-text span:nth-child(2) {
   color: #EE0054;

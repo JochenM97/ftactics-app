@@ -1,7 +1,7 @@
-@import "_fonts";
-@import "_colors";
-@import "_background";
-@import "_auth-form";
+@import "globals/_fonts";
+@import "globals/_colors";
+@import "globals/_background";
+@import "organisms/_auth-form";
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
@@ -18,6 +18,25 @@ body {
 	color: #fff;
 	margin: 0;
 	padding: 0;
+}
+
+.logo-box {
+	width: 30%;
+	max-width: 200px;
+	height: 10%;
+	margin: 0 auto;
+	padding-top: 20px;
+
+    .logo {
+    	height: 100%;
+		-moz-box-sizing: border-box;
+    	box-sizing: border-box;
+		background-clip: content-box;
+		background-image: url('../images/ftactics-logo.svg');
+		background-repeat: no-repeat;
+		background-origin: content-box;
+	    background-position: center;
+    }
 }
 
 .form-wrapper {
@@ -53,6 +72,13 @@ body {
 	    align-items: center;
 	    font-weight: bold;
 	    transition: opacity 0.3s ease;
+	    -webkit-box-shadow: 0px 28px 50px 0px rgba(0,0,0,0.26);
+		-moz-box-shadow: 0px 28px 50px 0px rgba(0,0,0,0.26);
+		box-shadow: 0px 28px 50px 0px rgba(0,0,0,0.26);
+	}
+
+	.auth-link:nth-child(2) {
+		z-index: 1;
 	}
 
 	.auth-link:hover {

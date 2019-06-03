@@ -1125,6 +1125,23 @@ body {
   padding: 0;
 }
 
+.logo-box {
+  width: 30%;
+  max-width: 200px;
+  height: 10%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.logo-box .logo {
+  height: 100%;
+  box-sizing: border-box;
+  background-clip: content-box;
+  background-image: url("../images/ftactics-logo.svg");
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
+}
+
 .form-wrapper {
   position: absolute;
   top: 50%;
@@ -1160,6 +1177,10 @@ body {
   align-items: center;
   font-weight: bold;
   transition: opacity 0.3s ease;
+  box-shadow: 0px 28px 50px 0px rgba(0, 0, 0, 0.26);
+}
+.auth-links .auth-link:nth-child(2) {
+  z-index: 1;
 }
 .auth-links .auth-link:hover {
   opacity: 0.8;

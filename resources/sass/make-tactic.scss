@@ -1,10 +1,10 @@
-@import "_fonts";
-@import "_colors";
-@import "_nav";
-@import "_keyframes";
-@import "_container";
-@import "_toolbar";
-@import "_save-tactic";
+@import "globals/_fonts";
+@import "globals/_colors";
+@import "organisms/_nav";
+@import "molecules/_keyframes";
+@import "organisms/_container";
+@import "organisms/_toolbar";
+@import "organisms/_save-tactic";
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";

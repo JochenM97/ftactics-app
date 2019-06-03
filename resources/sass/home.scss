@@ -1,5 +1,5 @@
-@import "_fonts";
-@import "_colors";
+@import "globals/_fonts";
+@import "globals/_colors";
 
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
@@ -115,7 +115,7 @@ nav {
 				background-image: linear-gradient($player-blue, rgba(2, 214, 214, 0));
 				.inner-circle {
 					background-color: $player-blue;
-					background-image: url('../images/search.svg');
+					background-image: url('../images/icons/search.svg');
 				}
 			}
 			.action-text span:nth-child(2) {
@@ -132,7 +132,7 @@ nav {
 				background-image: linear-gradient($home-purple, rgba(0, 123, 121, 0));
 				.inner-circle {
 					background-color: $home-purple;
-					background-image: url('../images/add-white.svg');
+					background-image: url('../images/icons/add-white.svg');
 				}
 			}
 			.action-text span:nth-child(2) {
@@ -149,7 +149,7 @@ nav {
 				background-image: linear-gradient($delete-red, rgba(0, 123, 121, 0));
 				.inner-circle {
 					background-color: $delete-red;
-					background-image: url('../images/heart.svg');
+					background-image: url('../images/icons/heart.svg');
 				}
 			}
 			.action-text span:nth-child(2) {

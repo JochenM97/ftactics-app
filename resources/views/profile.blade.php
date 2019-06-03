@@ -1,10 +1,12 @@
-@extends('layout', ['title' => ' - Profile'])
+@extends('layout', ['title' => ' | Profile'])
+
+@section('description', 'Edit your profile or log out of the application.')
 
 @section('content')
 
 <nav>
     <div class="back-box">
-        <a href="{{ url('/saved-tactics') }}"><img src="{{ URL::to('/') }}/images/back-arrow.svg" alt="Back to last page button"></a>
+        <a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
     </div>
     <header>
         <h1>PROFILE</h1>

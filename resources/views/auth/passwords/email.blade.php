@@ -1,18 +1,17 @@
-@extends('layout')
+@extends('layout', ['title' => ' | Password reset'])
+
+@section('description', 'Reset your password with your email address.')
 
 @section('content')
+<div class="logo-box">
+    <div class="logo"></div>
+</div>
 <div class="form-wrapper">
-    @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
-
     <form method="POST" action="{{ route('password.email') }}">
         @csrf
         
         <div class="form-content">
-            <a href="{{ url()->previous() }}" class="back-btn"><img src="{{ URL::to('/') }}/images/back-arrow-black.svg" alt="Back to last page button"></a>
+            <a href="{{ url()->previous() }}" class="back-btn"><img src="{{ URL::to('/') }}/images/icons/back-arrow-black.svg" alt="Back to last page button"></a>
 
             <header><h1>RESET PASSWORD</h1></header>
 
@@ -25,6 +24,12 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+
+                    @if (session('status'))
+                        <div class="" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

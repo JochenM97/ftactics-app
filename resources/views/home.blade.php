@@ -1,5 +1,7 @@
 @extends('layout', ['title' => ''])
 
+@section('description', 'Find, make and save your own football and futsal tactics.')
+
 @section('home')
 
 <div class="container">
@@ -56,7 +58,7 @@
     </nav>
 
     <div class="profile">
-        <div class="profile-content"><a href="{{ url('/profile') }}" class="home-link"><img src="images/profile-icon.svg" alt="My profile icon">MY PROFILE</a></div>
+        <div class="profile-content"><a href="{{ url('/profile') }}" class="home-link"><img src="images/icons/profile-icon.svg" alt="My profile icon">MY PROFILE</a></div>
     </div>
 </div>
 

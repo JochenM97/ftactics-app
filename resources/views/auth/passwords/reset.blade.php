@@ -1,6 +1,11 @@
-@extends('layout')
+@extends('layout', ['title' => ' | Reset password'])
+
+@section('description', 'Reset your password.')
 
 @section('content')
+<div class="logo-box">
+    <div class="logo"></div>
+</div>
 <div class="form-wrapper">
     <form method="POST" action="{{ route('password.update') }}">
         @csrf
@@ -42,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="submit-button">SEND RESET LINK</button>
+        <button type="submit" class="submit-button">CONTINUE</button>
     </form>
 </div>
 @endsection
