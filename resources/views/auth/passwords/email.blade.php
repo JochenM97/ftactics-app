@@ -26,7 +26,7 @@
                     @enderror
 
                     @if (session('status'))
-                        <div class="" role="alert">
+                        <div class="form-invalid-feedback" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif

@@ -154,6 +154,11 @@ nav .save-box #delete-btn, nav .delete-box #delete-btn {
   padding-left: 25px;
   padding-bottom: 20px;
   box-sizing: border-box;
+  /*
+   		input:required {
+    	background: red;
+  }
+  */
 }
 .form-wrapper form .form-element input {
   width: 100%;
@@ -179,6 +184,11 @@ nav .save-box #delete-btn, nav .delete-box #delete-btn {
 }
 .form-wrapper form .form-element input::placeholder {
   color: #A6AEBD;
+}
+.form-wrapper form .form-element .form-invalid-feedback {
+  display: inline-block;
+  margin-top: 9px;
+  color: #D9004D;
 }
 .form-wrapper form .other-actions-box {
   width: 100%;

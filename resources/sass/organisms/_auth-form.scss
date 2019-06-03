@@ -70,6 +70,17 @@
     		input::placeholder {
     			color: #A6AEBD;
     		}
+			/*
+    		input:required {
+			  	background: red;
+			}
+			*/
+
+    		.form-invalid-feedback {
+    			display: inline-block;
+    			margin-top: 9px;
+    			color: $error-red;
+    		}
 		}
 
 		.other-actions-box {

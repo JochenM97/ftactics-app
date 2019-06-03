@@ -37,7 +37,7 @@ for (var i=0; i<mqls.length; i++){ // loop through queries
     mediaqueryresponse(mqls[i]) // call handler function explicitly at run time
     mqls[i].addListener(mediaqueryresponse) // call handler function whenever the media query is triggered
 }
-// Konva.showWarnings = false;
+Konva.showWarnings = false;
 
 var stageWidth = 100;
 var stageHeight = 150;
@@ -143,7 +143,7 @@ football.addEventListener("click", function() {
 			stroke: "rgba(185,194,210,0.5)",
 			strokeEnabled: false,
 			strokeWidth: 2,
-			objectType: 'ball'
+			objectType: 'ball',
 		});
 
 	  	ball.selected = false;
@@ -527,6 +527,7 @@ addBtn.addEventListener("click", function() {
 
 	pushLayer = new Konva.Layer();
 	pushLayer.visible(false);
+	pushLayer.disableHitGraph();
 	pushLayer.name("layer_" + count);
 	stage.add(pushLayer);
 
@@ -592,6 +593,7 @@ removeBtn.addEventListener("click", function() {
 
 
 function onFrameClick(clickedFrame) {
+	currentLayer.draw();
 	// alle layers verborgen maken
 	for(var y=0; y<layersArray.length; y++) {
 		var layer_invisible_string = "." + layersArray[y];
@@ -629,4 +631,16 @@ function onFrameClick(clickedFrame) {
 	availableFootballs.innerHTML = amountFootballs[currentLayerIndex];
 
 	clickedFrame.classList.toggle("selected-frame");
+
+	var allCanvasObjects = stage.find('.canvas-object');
+	allCanvasObjects.each(function(canvasObject) 
+	{
+		if(canvasObject.selected == true)
+		{
+			canvasObject.selected = false;
+			canvasObject.opacity(1);
+			deleteBtn.style.display = "none";
+			currentLayer.draw();
+		}
+    });
 }

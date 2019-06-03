@@ -1,4 +1,4 @@
-// Konva.showWarnings = false;
+Konva.showWarnings = false;
 
 var stageWidth = 100;
 var stageHeight = 150;
@@ -104,7 +104,7 @@ football.addEventListener("click", function() {
 			stroke: "rgba(185,194,210,0.5)",
 			strokeEnabled: false,
 			strokeWidth: 2,
-			objectType: 'ball'
+			objectType: 'ball',
 		});
 
 	  	ball.selected = false;
