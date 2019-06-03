@@ -84,4 +84,23 @@ class HomeController extends Controller
         $customtactics = CustomTactic::where('user_id', $user->id)->get();
         return view('saved-tactics', ['customtactics' => $customtactics]);
     }
+
+    public function showCustomTactic($customtactic_id)
+    {
+        $customtactic = CustomTactic::findOrFail($customtactic_id);
+        $this->authorize('view', $customtactic);
+
+        return view('view-tactic')->with('customtactic', $customtactic);
+    }
+
+    public function deleteCustomTactic($customtactic_id) {     
+        try {
+            CustomTactic::findOrFail($customtactic_id);
+        } catch (\Exception $e) { 
+            return redirect('/saved-tactics')->with('warning', 'You are trying to delete a tactic that does not exist!'); 
+        }
+        CustomTactic::where('id', $customtactic_id)->delete();
+        return redirect('/saved-tactics')
+        ->with('response', 'Tactic deleted successfully.'); 
+    }
 }

@@ -105,335 +105,143 @@ nav .save-box #delete-btn, nav .delete-box #delete-btn {
     font-size: 1.1rem;
   }
 }
-.keyframe-editor {
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.keyframe-editor #add-frame, .keyframe-editor #remove-frame {
-  min-width: 10%;
-  display: inline-block;
-  background-repeat: no-repeat;
-  background-origin: content-box;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-.keyframe-editor #add-frame {
-  background-image: url("../images/add-frame.svg");
-  background-position-x: left;
-}
-.keyframe-editor #remove-frame {
-  background-image: url("../images/remove-frame.svg");
-  background-position-x: right;
-}
-
-#keyframes {
-  display: block;
-  text-align: center;
-  width: 80%;
+.form-wrapper {
+  font-family: "Arial", sans-serif;
+  padding-right: 15px;
+  padding-left: 15px;
   max-width: 600px;
-  overflow-x: visible;
-  overflow-y: hidden;
-  white-space: nowrap;
-}
-#keyframes .frame {
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  border: 2px solid #fff;
-  border-radius: 100%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  /* make things invisible upon start */
-  -webkit-animation: fadeIn ease-in 1;
-  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-  animation: fadeIn ease-in 1;
-  -webkit-animation-fill-mode: forwards;
-  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-  animation-fill-mode: forwards;
-  -webkit-animation-duration: 0.4s;
-  animation-duration: 0.4s;
-}
-#keyframes .frame:not(:last-child) {
-  margin-right: 25px;
-}
-#keyframes .selected-frame {
-  background-color: #fff;
-  color: #001843;
-}
-#keyframes .line {
-  display: inline-block;
-  width: 30px;
-  height: 2px;
-  background-color: #fff;
-  vertical-align: middle;
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@media only screen and (min-width: 768px) {
-  .keyframe-editor {
-    top: 65px;
-  }
-  .keyframe-editor #add-frame, .keyframe-editor #remove-frame {
-    height: 30px;
-    padding: 15px;
-  }
-  .keyframe-editor #keyframes {
-    height: 30px;
-    padding: 15px 0;
-  }
-  .keyframe-editor #keyframes .frame {
-    width: 26px;
-    height: 26px;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  .keyframe-editor {
-    top: 75px;
-  }
-  .keyframe-editor #add-frame, .keyframe-editor #remove-frame {
-    height: 35px;
-    padding: 20px;
-  }
-  .keyframe-editor #keyframes {
-    height: 35px;
-    padding: 20px 0;
-  }
-  .keyframe-editor #keyframes .frame {
-    width: 31px;
-    height: 31px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .keyframe-editor {
-    top: 45px;
-  }
-  .keyframe-editor #add-frame, .keyframe-editor #remove-frame {
-    height: 25px;
-    padding: 10px;
-  }
-  .keyframe-editor #keyframes {
-    height: 25px;
-    padding: 10px 0;
-  }
-  .keyframe-editor #keyframes .frame {
-    width: 21px;
-    height: 21px;
-  }
-}
-#container {
-  background-color: #fff;
-  width: auto;
-  height: auto;
-  min-height: 1px;
   margin: 0 auto;
-  position: absolute;
-  top: 52%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-image: url("../images/background-field.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#toolbar {
   width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.form-wrapper form {
+  color: #001843;
+  width: 100%;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 0px 28px 50px 0px rgba(0, 0, 0, 0.56);
+}
+.form-wrapper form .form-content {
   background-color: #fff;
-  position: fixed;
-  bottom: 0;
+}
+.form-wrapper form .back-btn {
+  position: absolute;
+  left: 28px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+.form-wrapper form .back-btn img {
+  height: 50%;
+}
+.form-wrapper form header {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
-#toolbar #blue-player, #toolbar #ball, #toolbar #red-player, #toolbar #delete {
-  display: inline-block;
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  margin: 0 5px;
+.form-wrapper form header h1 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  margin: 0;
 }
-#toolbar #blue-player, #toolbar #ball, #toolbar #red-player {
-  position: relative;
+.form-wrapper form .input-elements {
+  padding: 20px 0;
 }
-#toolbar #blue-player img, #toolbar #ball img, #toolbar #red-player img {
-  max-width: 20%;
-  max-height: 20%;
-  position: absolute;
-  right: 0;
-  top: 5px;
-}
-#toolbar #blue-player .amount, #toolbar #ball .amount, #toolbar #red-player .amount {
-  max-width: 20%;
-  max-height: 20%;
-  position: absolute;
-  right: 3px;
-  bottom: 15%;
-  color: rgba(0, 33, 91, 0.7);
-}
-#toolbar #blue-player {
-  background-image: url("../images/blue-player.svg");
-}
-#toolbar #ball {
-  background-image: url("../images/ball.svg");
-}
-#toolbar #red-player {
-  background-image: url("../images/red-player.svg");
-}
-#toolbar #delete {
-  display: none;
-  background-image: url("../images/delete.svg");
-}
-#toolbar .active {
-  background-color: #fff !important;
-  border-color: #fff !important;
-}
-
-@media only screen and (min-width: 768px) {
-  #toolbar {
-    height: 70px;
-  }
-  #toolbar #blue-player, #toolbar #ball, #toolbar #red-player, #toolbar #delete {
-    width: 70px;
-    height: 70px;
-  }
-}
-@media only screen and (min-width: 1025px) {
-  #toolbar {
-    height: 80px;
-  }
-  #toolbar #blue-player, #toolbar #ball, #toolbar #red-player, #toolbar #delete {
-    width: 80px;
-    height: 80px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  #toolbar {
-    height: 50px;
-  }
-  #toolbar #blue-player, #toolbar #ball, #toolbar #red-player, #toolbar #delete {
-    width: 50px;
-    height: 50px;
-  }
-}
-#save-screen {
+.form-wrapper form .form-element {
   width: 100%;
-  height: 0%;
-  position: absolute;
-  z-index: 100;
-  background: linear-gradient(to top, #002464 0%, #001843 100%);
-  transition: height 0.4s ease;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
 }
-#save-screen #save-screen-content {
-  position: absolute;
+.form-wrapper form .form-element input {
   width: 100%;
-  height: 100%;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-}
-#save-screen #save-screen-content #close-save-screen {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  z-index: 101;
-  cursor: pointer;
-}
-#save-screen #save-screen-content form {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-}
-#save-screen #save-screen-content form .form-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 100%;
-}
-#save-screen #save-screen-content form label {
-  width: 80%;
-  max-width: 400px;
-  font-size: 2.5rem;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
-#save-screen #save-screen-content form input {
-  width: 80%;
-  max-width: 400px;
   height: 50px;
   line-height: 50px;
   padding: 9px 18px;
-  font-size: 1.2rem;
+  font-size: 14px;
   box-sizing: border-box;
   color: #001843;
   border: 1px solid #8A95A8;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 50px;
 }
-#save-screen #save-screen-content form .submit-button {
-  background: linear-gradient(to right, #00f6f1 0%, #006d6b 100%);
-  height: 45px;
-  text-align: center;
-  line-height: 45px;
-  font-size: 1.5rem;
-  color: #fff;
-  border: none;
-  border-radius: 44px;
-  font-family: "BebasNeue", "Arial", sans-serif;
-  width: 80%;
-  max-width: 400px;
-  cursor: pointer;
+.form-wrapper form .form-element input::-webkit-input-placeholder {
+  color: #A6AEBD;
+}
+.form-wrapper form .form-element input::-moz-placeholder {
+  color: #A6AEBD;
+}
+.form-wrapper form .form-element input:-ms-input-placeholder {
+  color: #A6AEBD;
+}
+.form-wrapper form .form-element input::-ms-input-placeholder {
+  color: #A6AEBD;
+}
+.form-wrapper form .form-element input::placeholder {
+  color: #A6AEBD;
+}
+.form-wrapper form .other-actions-box {
+  width: 100%;
+  padding-right: 25px;
+  padding-left: 25px;
+  box-sizing: border-box;
+}
+.form-wrapper form .other-actions-box .remember {
+  margin-bottom: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.form-wrapper form .other-actions-box .login {
+  margin-left: 3px;
+}
+.form-wrapper form .other-actions-box .login a, .form-wrapper form .other-actions-box .login a:visited {
+  color: #5C6C87;
+}
+.form-wrapper form .submit-button {
+  width: 100%;
+  height: 60px;
   display: block;
-  margin: 0 auto;
+  border: none;
+  background-color: #001843;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 0 0 2px 2px;
+  cursor: pointer;
+}
+.form-wrapper form .submit-button:focus {
+  outline: 0;
 }
 
 @media only screen and (min-width: 768px) {
-  #save-screen #close-save-screen {
-    height: 38px;
+  .form-wrapper form .back-btn {
+    top: 40px;
   }
-}
-@media only screen and (min-width: 1025px) {
-  #save-screen #close-save-screen {
-    height: 44px;
+
+  .auth-links .auth-link {
+    height: 80px;
+    font-size: 18px;
+  }
+  .auth-links .login-link {
+    margin-bottom: 20px;
   }
 }
 @media only screen and (max-width: 767px) {
-  #save-screen #close-save-screen {
-    height: 26px;
+  .form-wrapper form .back-btn {
+    top: 36px;
+  }
+  .form-wrapper form header h1 {
+    font-size: 1.5em;
+  }
+
+  .auth-links .auth-link {
+    height: 60px;
+    font-size: 14px;
+  }
+  .auth-links .login-link {
+    margin-bottom: 10px;
   }
 }
 .container {
@@ -1401,7 +1209,7 @@ nav .save-box #delete-btn, nav .delete-box #delete-btn {
     margin-left: 91.6666666667%;
   }
 }
-html, body, #stage-parent {
+html, body {
   width: 100%;
   height: 100%;
 }
@@ -1409,7 +1217,15 @@ html, body, #stage-parent {
 body {
   font-family: "BebasNeue", "Arial", sans-serif;
   color: #fff;
-  background-color: #001843;
   margin: 0;
   padding: 0;
+  background-color: #001843;
+}
+
+.form-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }

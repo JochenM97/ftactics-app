@@ -4,5 +4,9 @@
     "/css/home.css": "/css/home.css",
     "/css/auth.css": "/css/auth.css",
     "/css/custom-tactics.css": "/css/custom-tactics.css",
-    "/js/make-tactic.js": "/js/make-tactic.js"
+    "/css/view-tactic.css": "/css/view-tactic.css",
+    "/css/profile.css": "/css/profile.css",
+    "/css/errors.css": "/css/errors.css",
+    "/js/make-tactic.js": "/js/make-tactic.js",
+    "/js/view-tactic.js": "/js/view-tactic.js"
 }

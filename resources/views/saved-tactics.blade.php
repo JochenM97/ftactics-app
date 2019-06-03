@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout', ['title' => ' - Saved tactics'])
 
 @section('content')
 
@@ -8,7 +8,7 @@
 		<a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/back-arrow.svg" alt="Back to last page button"></a>
 	</div>
 	<header>
-		<h1>MAKE TACTICS</h1>
+		<h1>SAVED TACTICS</h1>
 	</header>
 </nav>
 
@@ -22,10 +22,12 @@
 	$i += 1
 	@endphp
 
-	<div class="tactic-box">
+	<a href="{{ url('/saved-tactics', $customtactic->id) }}" class="tactic-box">
 		<span class="number">{{ $i }}</span>
+		<span class="number-shadow"></span>
 		<div class="name-box">{{ $customtactic->name }}</div>
-	</div>
+		<img src="{{ URL::to('/') }}/images/back-arrow.svg" alt="Show tactic arrow" class="tactic-arrow">
+	</a>
 
 @endforeach
 

@@ -27,6 +27,7 @@ function fitStageIntoParentContainer()
 	var container = document.querySelector('#stage-parent');
 
 	var containerWidth = container.offsetWidth;
+
 	var containerHeight;
 	if(container.offsetHeight == 0)
 	{
@@ -91,8 +92,8 @@ football.addEventListener("click", function() {
 	{
 		var ball = new Konva.Rect(
 		{
-			x: 50,
-			y: 75,
+			x: 46,
+			y: 71,
 	        fill: '#FFF',
 			draggable: true,
 			name: 'canvas-object',
@@ -179,8 +180,8 @@ bplayer.addEventListener("click", function() {
 	    });
 
 	    var bPlayerGroup = new Konva.Group({
-			x: 50,
-			y: 75,
+			x: 45,
+			y: 70,
 			draggable: true,
 			name: 'canvas-object',
 			stroke: "#00A5A2",
@@ -263,8 +264,8 @@ rplayer.addEventListener("click", function() {
 	    });
 
 	    var rPlayerGroup = new Konva.Group({
-			x: 50,
-			y: 75,
+			x: 45,
+			y: 70,
 			draggable: true,
 			name: 'canvas-object',
 			stroke: "#BA7C00",

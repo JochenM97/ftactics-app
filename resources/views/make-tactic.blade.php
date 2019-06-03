@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout', ['title' => ' - Make tactic'])
 
 @section('make-tactic')
 

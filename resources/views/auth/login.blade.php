@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout', ['title' => ' - Login'])
 
 @section('content')
 <div class="form-wrapper">

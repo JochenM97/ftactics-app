@@ -11,6 +11,8 @@
 |
 */
 
+use App\CustomTactic;
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -28,3 +30,7 @@ Route::post('/save-profile/{id}', 'HomeController@saveProfile')->name('save-prof
 Route::post('/save-tactic', 'HomeController@saveTactic')->name('save-tactic');
 
 Route::get('/saved-tactics', 'HomeController@showSavedTactics')->name('saved-tactics');
+
+Route::get('/saved-tactics/{id}', 'HomeController@showCustomTactic');//->middleware('can:view,App\CustomTactic');
+
+Route::get('/delete-tactic/{id}', 'HomeController@deleteCustomTactic');

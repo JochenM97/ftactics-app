@@ -19,9 +19,103 @@ body {
 }
 
 .tactics-overview {
-	width: 80% !important;
+	width: 90% !important;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	max-width: 800px;
+
+	.tactic-box {
+		color: #fff;
+		text-decoration: none;
+		position: relative;
+		display: flex;
+	    flex-direction: row;
+	    border-radius: 10px;
+	    background: -webkit-linear-gradient(left, rgba(255,255,255,0.44) 0%, rgba(128,128,128,0.1) 100%);
+	    background: -o-linear-gradient(left, rgba(255,255,255,0.44) 0%, rgba(128,128,128,0.1) 100%);
+	    background: linear-gradient(to right, rgba(255,255,255,0.44) 0%, rgba(128,128,128,0.1) 100%);
+
+	    .number-shadow {
+	    	z-index: -1;
+			position: absolute;
+			height: 80px;
+			width: 23%;
+		    min-width: 80px;
+			left: -8px;
+			bottom: -8px;
+			border-radius: 8px;
+			transition: left 0.25s ease-out, bottom 0.25s ease-out;
+	    }
+	
+		.number {
+			height: auto;
+			width: 25%;
+		    min-width: 80px;
+			border-radius: 8px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	
+		.name-box {
+			width: 65%;
+			padding: 15px 20px;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.tactic-arrow {
+			width: 10%;
+			transform: rotate(180deg);
+			padding: 15px;
+			opacity: 0.2;
+		}
+	}
+
+	.tactic-box:hover {
+		.number-shadow {
+			left: -20px;
+			bottom: -12px;
+		}
+	}
+
+	.tactic-box:nth-of-type(3n+1) {
+		.number {
+			background: -webkit-linear-gradient(top right, rgba(16,217,213,1) 0%, rgba(0,99,97,1) 100%);
+			background: -o-linear-gradient(top right, rgba(16,217,213,1) 0%, rgba(0,99,97,1) 100%);
+			background: linear-gradient(to bottom left, rgba(16,217,213,1) 0%, rgba(0,99,97,1) 100%);
+		}
+		.number-shadow {
+			background: -webkit-linear-gradient(155deg, rgba(16,217,213,1) 0%, rgba(75,75,75,0) 100%);
+			background: -o-linear-gradient(155deg, rgba(16,217,213,1) 0%, rgba(75,75,75,0) 100%);
+			background: linear-gradient(245deg, rgba(16,217,213,1) 0%, rgba(75,75,75,0) 100%);
+		}
+	}
+	.tactic-box:nth-of-type(3n+2) {
+		.number {
+			background: -webkit-linear-gradient(top right, rgba(231,41,255,1) 0%, rgba(88,18,97,1) 100%);
+			background: -o-linear-gradient(top right, rgba(231,41,255,1) 0%, rgba(88,18,97,1) 100%);
+			background: linear-gradient(to bottom left, rgba(231,41,255,1) 0%, rgba(88,18,97,1) 100%);
+		}
+		.number-shadow {
+			background: -webkit-linear-gradient(155deg, rgba(255,117,241,1) 0%, rgba(88,18,97,0) 100%);
+			background: -o-linear-gradient(155deg, rgba(255,117,241,1) 0%, rgba(88,18,97,0) 100%);
+			background: linear-gradient(245deg, rgba(255,117,241,1) 0%, rgba(88,18,97,0) 100%);
+		}
+	}
+	.tactic-box:nth-of-type(3n) {
+		.number {
+			background: -webkit-linear-gradient(top right, rgba(255,0,90,1) 0%, rgba(119,0,42,1) 100%);
+			background: -o-linear-gradient(top right, rgba(255,0,90,1) 0%, rgba(119,0,42,1) 100%);
+			background: linear-gradient(to bottom left, rgba(255,0,90,1) 0%, rgba(119,0,42,1) 100%);
+		}
+		.number-shadow {
+			background: -webkit-linear-gradient(155deg, rgba(255,123,170,1) 0%, rgba(88,18,97,0) 100%);
+			background: -o-linear-gradient(155deg, rgba(255,123,170,1) 0%, rgba(88,18,97,0) 100%);
+			background: linear-gradient(245deg, rgba(255,123,170,1) 0%, rgba(88,18,97,0) 100%);
+		}
+	}
 }
 
 nav {
@@ -33,10 +127,12 @@ nav {
     align-items: center;
 
     header {
+    	left: 50%;
+    	transform: translateX(-50%);
     	position: absolute;
     	margin: 0 auto;
         width: 100%;
-        //max-width: 800px;
+        max-width: 800px;
         text-align: center;
         display: flex;
         align-items: center;
@@ -55,6 +151,7 @@ nav {
         align-items: center;
         padding-left: 15px;
         cursor: pointer;
+        z-index: 1;
 
         a {
             height: 100%;
@@ -77,11 +174,49 @@ nav {
             font-size: 2.4rem;
         }
     }
+
+    .tactics-overview {
+    	.tactic-box:first-child {
+			margin-top: 60px;
+		}
+
+    	.tactic-box {
+			min-height: 100px;
+			margin-bottom: 60px;
+
+			.number {
+				font-size: 3.5rem;
+			}
+
+			.name-box {
+				font-size: 3rem;
+			}
+		}
+    }
 }
 
 @media only screen and (min-width: 1025px) {
     nav {
     	height: 74px;
+    }
+
+    .tactics-overview {
+    	.tactic-box:first-child {
+			margin-top: 70px;
+		}
+
+    	.tactic-box {
+			min-height: 120px;
+			margin-bottom: 70px;
+
+			.number {
+				font-size: 4rem;
+			}
+
+			.name-box {
+				font-size: 3.5rem;
+			}
+		}
     }
 }
 
@@ -92,5 +227,24 @@ nav {
     	h1 {
     		font-size: 2rem;
     	}
+    }
+
+    .tactics-overview {
+    	.tactic-box:first-child {
+			margin-top: 50px;
+		}
+
+    	.tactic-box {
+			min-height: 80px;
+			margin-bottom: 50px;
+
+			.number {
+				font-size: 3rem;
+			}
+
+			.name-box {
+				font-size: 2rem;
+			}
+		}
     }
 }

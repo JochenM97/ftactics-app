@@ -9,7 +9,7 @@
 	    <meta name="description" content="">
 	    <link rel="shortcut icon" href="">
 
-	    <title>{{ config('app.name') }}</title>
+	    <title>{{ config('app.name') }}{{ $title }}</title>
 
 	    @yield('pagespecificstyles')
     </head>

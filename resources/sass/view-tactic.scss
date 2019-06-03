@@ -1,0 +1,58 @@
+@import "_fonts";
+@import "_colors";
+@import "_nav";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/grid";
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'BebasNeue', 'Arial', sans-serif;
+	color: #fff;
+	background-color: $background-blue;
+	margin: 0;
+	padding: 0;
+}
+
+#field {
+	background-color: #fff;
+	width: auto;
+	height: auto;
+	min-height: 1px;
+	margin: 0 auto;
+	position: absolute;
+	top: 52%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-image: url('../images/background-field.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.blue-player, .red-player, .football {
+	position: absolute;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+}
+
+.blue-player {
+	background-color: #00E2DE;
+	border-radius: 5px;
+}
+
+.red-player {
+	background-color: #FFAA00;
+	border-radius: 5px;
+}
+
+.football {
+	background-color: #FFF;
+	border-radius: 100%;
+}

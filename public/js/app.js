@@ -148,6 +148,17 @@ const app = new Vue({
 
 /***/ }),
 
+/***/ "./resources/sass/errors.scss":
+/*!************************************!*\
+  !*** ./resources/sass/errors.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/home.scss":
 /*!**********************************!*\
   !*** ./resources/sass/home.scss ***!
@@ -170,10 +181,32 @@ const app = new Vue({
 
 /***/ }),
 
+/***/ "./resources/sass/profile.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/profile.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./resources/sass/view-tactic.scss":
+/*!*****************************************!*\
+  !*** ./resources/sass/view-tactic.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!****************************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/make-tactic.scss ./resources/sass/home.scss ./resources/sass/auth.scss ./resources/sass/custom-tactics.scss ***!
-  \****************************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/make-tactic.scss ./resources/sass/home.scss ./resources/sass/auth.scss ./resources/sass/custom-tactics.scss ./resources/sass/view-tactic.scss ./resources/sass/profile.scss ./resources/sass/errors.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -181,7 +214,10 @@ __webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\js\app.js */"./resour
 __webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\sass\make-tactic.scss */"./resources/sass/make-tactic.scss");
 __webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\sass\home.scss */"./resources/sass/home.scss");
 __webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\sass\auth.scss */"./resources/sass/auth.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\sass\custom-tactics.scss */"./resources/sass/custom-tactics.scss");
+__webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\sass\custom-tactics.scss */"./resources/sass/custom-tactics.scss");
+__webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\sass\view-tactic.scss */"./resources/sass/view-tactic.scss");
+__webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\sass\profile.scss */"./resources/sass/profile.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\ftactics\resources\sass\errors.scss */"./resources/sass/errors.scss");
 
 
 /***/ })

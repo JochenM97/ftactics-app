@@ -995,9 +995,12 @@ header {
 }
 header .logo {
   height: 100%;
-  background-color: #CA2CDE;
   box-sizing: border-box;
   background-clip: content-box;
+  background-image: url("../images/ftactics-logo.svg");
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
 }
 
 .home-link {
@@ -1122,6 +1125,7 @@ nav .nav-box .saved:hover {
 @media only screen and (min-width: 768px) {
   header .logo {
     padding: 20px 5px 10px 5px;
+    background-size: auto 60%;
   }
 
   .profile .profile-content {
@@ -1167,6 +1171,7 @@ nav .nav-box .saved:hover {
 @media only screen and (min-width: 1025px) {
   header .logo {
     padding: 25px 5px 15px 5px;
+    background-size: auto 70%;
   }
 
   .profile .profile-content {
@@ -1220,6 +1225,7 @@ nav .nav-box .saved:hover {
 @media only screen and (max-width: 767px) {
   header .logo {
     padding: 15px 5px 5px 5px;
+    background-size: auto 50%;
   }
 
   .profile .profile-content {

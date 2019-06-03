@@ -18,14 +18,15 @@ nav {
 
         h1 {
             margin: 0;
+            text-transform: uppercase;
         }
     }
 
-    .back-box, .save-box {
+    .back-box, .save-box, .delete-box {
 		min-width: 20%;
     }
 
-    header, .back-box, .save-box {
+    header, .back-box, .save-box, .delete-box {
         height: 100%;
     }
 
@@ -48,26 +49,38 @@ nav {
         }
     }
 
-    .save-box {
+    .save-box, .delete-box {
     	display: flex;
         justify-content: flex-end;
         align-items: center;
         padding-right: 15px;
 
-        #save-btn {
-            background: -webkit-linear-gradient(left, rgba(0,246,241,1) 0%, rgba(0,109,107,1) 100%);
-            background: -o-linear-gradient(left, rgba(0,246,241,1) 0%, rgba(0,109,107,1) 100%);
-            background: linear-gradient(to right, rgba(0,246,241,1) 0%, rgba(0,109,107,1) 100%);
+        #save-btn, #delete-btn {
             height: 60%;
             text-align: center;
-            line-height: 60%;
-            font-size: 1.5rem;
             color: #fff;
             border: none;
             border-radius: 44px;
             font-family: 'BebasNeue', 'Arial', sans-serif;
             width: 100%;
             cursor: pointer;
+        }
+
+        #save-btn {
+            background: -webkit-linear-gradient(left, rgba(0,246,241,1) 0%, rgba(0,109,107,1) 100%);
+            background: -o-linear-gradient(left, rgba(0,246,241,1) 0%, rgba(0,109,107,1) 100%);
+            background: linear-gradient(to right, rgba(0,246,241,1) 0%, rgba(0,109,107,1) 100%);
+            line-height: 60%;
+        }
+
+        #delete-btn {
+            text-decoration: none;
+            background: -webkit-linear-gradient(top right, rgba(255,0,90,1) 0%, rgba(119,0,42,1) 100%);
+            background: -o-linear-gradient(top right, rgba(255,0,90,1) 0%, rgba(119,0,42,1) 100%);
+            background: linear-gradient(to bottom left, rgba(255,0,90,1) 0%, rgba(119,0,42,1) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }
@@ -79,12 +92,20 @@ nav {
         h1 {
             font-size: 2.4rem;
         }
+
+        #save-btn, #delete-btn {
+            font-size: 1.3rem;
+        }
     }
 }
 
 @media only screen and (min-width: 1025px) {
     nav {
     	height: 74px;
+
+        #save-btn, #delete-btn {
+            font-size: 1.5rem;
+        }
     }
 }
 
@@ -95,5 +116,9 @@ nav {
     	h1 {
     		font-size: 2rem;
     	}
+
+        #save-btn, #delete-btn {
+            font-size: 1.1rem;
+        }
     }
 }
