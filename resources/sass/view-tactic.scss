@@ -50,9 +50,11 @@ body {
 .red-player {
 	background-color: #FFAA00;
 	border-radius: 5px;
+	z-index: 1;
 }
 
 .football {
 	background-color: #FFF;
 	border-radius: 100%;
+	z-index: 2;
 }

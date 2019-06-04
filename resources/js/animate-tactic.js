@@ -193,12 +193,6 @@ for(var i=0; i<object_ids.length; i++)
 	}
 	else if(object_ids[i].slice(0,-2) == "blue-player")
 	{
-		if(object_ids[i] == "blue-player-3")
-		{
-			console.log(x_positions[i][0] + "px");
-			console.log(y_positions[i][0] + "px");
-		}
-
 		newObject.id = object_ids[i];
 		newObject.className = "blue-player";
 		newObject.style.width = 10*scale + "px";
@@ -215,21 +209,19 @@ for(var i=0; i<object_ids.length; i++)
 	var timeline_framesY = [];
 	for(var y=1; y<x_positions[0].length; y++)
 	{
-		object_frames.push({translateX: (x_positions[i][y]-x_positions[i][0]), translateY: (y_positions[i][y]-y_positions[i][0])},);
+		object_frames.push({translateX: (x_positions[i][y]-x_positions[i][0]), translateY: (y_positions[i][y]-y_positions[i][0]), duration: 1000},);
 	    timeline_framesX.push(x_positions[i][y]-x_positions[i][0]);
 	    timeline_framesY.push(y_positions[i][y]-y_positions[i][0]);
 	}
 
-	var backToX = x_positions[i][object_frames.length]-x_positions[i][0];
+	var backToX = x_positions[i][object_frames.length-1]-x_positions[i][0];
 
-	console.log(object_ids[i]);
-	console.log(x_positions[i][0]);
-  
+	object_frames.push({translateX: 0, translateY: 0, duration: 2000},);
+  	
 	anime({
 		targets: target,
 		keyframes: object_frames,
 		easing: 'linear',
-		duration: 4000,
 		loop: true
 	});
   
@@ -242,4 +234,8 @@ for(var i=0; i<object_ids.length; i++)
     offset: '0'
   });
   */
+}
+
+function countSteps() {
+
 }
