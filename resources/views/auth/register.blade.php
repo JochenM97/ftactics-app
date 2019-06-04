@@ -3,6 +3,7 @@
 @section('description', 'Register and discover and create your own football and futsal tactics.')
 
 @section('content')
+<div class="gradient-background"></div>
 <div class="logo-box">
     <div class="logo"></div>
 </div>

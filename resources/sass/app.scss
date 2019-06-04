@@ -1,0 +1,34 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/grid";
+
+@import "globals/_fonts";
+@import "globals/_colors";
+@import "globals/_background";
+@import "molecules/_keyframes";
+@import "organisms/_nav";
+@import "organisms/_container";
+@import "organisms/_toolbar";
+@import "organisms/_save-tactic";
+@import "organisms/_auth-form";
+
+@import "auth";
+@import "custom-tactics";
+@import "errors";
+@import "home";
+@import "profile";
+@import "view-tactic";
+
+html, body, #stage-parent {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: 'BebasNeue', 'Arial', sans-serif;
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	background-color: $background-blue;
+}

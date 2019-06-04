@@ -24,10 +24,6 @@
 </script>
 @endsection
 
-@section('pagespecificstyles')
-<link href="{{ asset('css/view-tactic.css') }}" rel="stylesheet">
-@endsection
-
 @section('pagespecificscripts')
 <script type="text/javascript" src="{{ asset('js/view-tactic.js') }}"></script>
 @endsection

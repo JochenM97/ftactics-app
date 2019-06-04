@@ -15,7 +15,7 @@
 
 	    <title>{{ config('app.name') }}{{ $title }}</title>
 
-	    @yield('pagespecificstyles')
+	    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
     	@yield('make-tactic')

@@ -3,6 +3,7 @@
 @section('description', 'Reset your password.')
 
 @section('content')
+<div class="gradient-background"></div>
 <div class="logo-box">
     <div class="logo"></div>
 </div>

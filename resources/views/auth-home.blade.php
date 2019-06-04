@@ -3,7 +3,7 @@
 @section('description', 'Log in or register to continue or start to make your own football tactics.')
 
 @section('content')
-
+<div class="gradient-background"></div>
 <div class="logo-box">
     <div class="logo"></div>
 </div>
@@ -12,8 +12,4 @@
     <a href="{{ url('/register') }}" class="auth-link register-link">SIGN UP</a>
 </div>
 
-@endsection
-
-@section('pagespecificstyles')
-<link href="{{ asset('css/auth.css') }}" rel="stylesheet">
 @endsection

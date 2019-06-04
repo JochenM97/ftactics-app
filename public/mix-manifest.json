@@ -1,12 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/make-tactic.css": "/css/make-tactic.css",
-    "/css/home.css": "/css/home.css",
-    "/css/auth.css": "/css/auth.css",
-    "/css/custom-tactics.css": "/css/custom-tactics.css",
-    "/css/view-tactic.css": "/css/view-tactic.css",
-    "/css/profile.css": "/css/profile.css",
-    "/css/errors.css": "/css/errors.css",
+    "/css/app.css": "/css/app.css",
     "/js/make-tactic.js": "/js/make-tactic.js",
     "/js/view-tactic.js": "/js/view-tactic.js"
 }

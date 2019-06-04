@@ -5,11 +5,11 @@
 @section('home')
 
 <div class="container">
-    <header>
+    <div class="home-header">
         <div class="logo"></div>
-    </header>
+    </div>
 
-    <nav>
+    <div class="home-nav">
         <div class="nav-box">
             <div class="find">
                 <a href="{{ url('/find-tactics') }}" class="home-link">
@@ -55,15 +55,11 @@
                 </a>
             </div>
         </div>
-    </nav>
+    </div>
 
     <div class="profile">
         <div class="profile-content"><a href="{{ url('/profile') }}" class="home-link"><img src="images/icons/profile-icon.svg" alt="My profile icon">MY PROFILE</a></div>
     </div>
 </div>
 
-@endsection
-
-@section('pagespecificstyles')
-<link href="{{ asset('css/home.css') }}" rel="stylesheet">
 @endsection

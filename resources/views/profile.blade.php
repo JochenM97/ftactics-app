@@ -52,7 +52,3 @@
 </div>
 
 @endsection
-
-@section('pagespecificstyles')
-<link href="{{ asset('css/profile.css') }}" rel="stylesheet">
-@endsection

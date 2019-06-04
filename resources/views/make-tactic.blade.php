@@ -51,10 +51,6 @@
 
 @endsection
 
-@section('pagespecificstyles')
-<link href="{{ asset('css/make-tactic.css') }}" rel="stylesheet">
-@endsection
-
 @section('pagespecificscripts')
 <script type="text/javascript" src="{{ asset('js/make-tactic.js') }}"></script>
 @endsection

@@ -5,14 +5,14 @@
 @section('content')
 
 
-<nav>
+<div class="custom-tactic-nav">
 	<div class="back-box">
 		<a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
 	</div>
 	<header>
 		<h1>FIND TACTICS</h1>
 	</header>
-</nav>
+</div>
 
 @php $i = 0 @endphp
 
@@ -35,8 +35,4 @@
 
 </div>
 
-@endsection
-
-@section('pagespecificstyles')
-<link href="{{ asset('css/custom-tactics.css') }}" rel="stylesheet">
 @endsection

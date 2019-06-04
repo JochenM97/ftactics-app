@@ -3,6 +3,7 @@
 @section('description', 'Log in and start viewing and making more tactics.')
 
 @section('content')
+<div class="gradient-background"></div>
 <div class="logo-box">
     <div class="logo"></div>
 </div>

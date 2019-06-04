@@ -31,37 +31,7 @@ mix.scripts([
     'resources/js/animate-tactic.js',
 ], 'public/js/view-tactic.js');
 
-mix.sass('resources/sass/make-tactic.scss', 'public/css')
+mix.sass('resources/sass/app.scss', 'public/css')
 	.options({
-        processCssUrls: false
-    });
-
-mix.sass('resources/sass/home.scss', 'public/css')
-	.options({
-        processCssUrls: false
-    });
-
-mix.sass('resources/sass/auth.scss', 'public/css')
-    .options({
-        processCssUrls: false
-    });
-
-mix.sass('resources/sass/custom-tactics.scss', 'public/css')
-    .options({
-        processCssUrls: false
-    });
-
-mix.sass('resources/sass/view-tactic.scss', 'public/css')
-    .options({
-        processCssUrls: false
-    });
-
-mix.sass('resources/sass/profile.scss', 'public/css')
-    .options({
-        processCssUrls: false
-    });
-
-mix.sass('resources/sass/errors.scss', 'public/css')
-    .options({
         processCssUrls: false
     });
