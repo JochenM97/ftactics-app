@@ -7,7 +7,7 @@
 <div class="logo-box">
     <div class="logo"></div>
 </div>
-<div class="form-wrapper">
+<main class="form-wrapper">
     <form method="POST" action="{{ route('password.update') }}">
         @csrf
 
@@ -50,9 +50,5 @@
         </div>
         <button type="submit" class="submit-button">CONTINUE</button>
     </form>
-</div>
-@endsection
-
-@section('pagespecificstyles')
-<link href="{{ asset('css/auth.css') }}" rel="stylesheet">
+</main>
 @endsection

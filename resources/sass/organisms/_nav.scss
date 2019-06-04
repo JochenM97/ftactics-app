@@ -1,4 +1,4 @@
-nav {
+.navigation {
 	position: fixed;
     width: 100%;
     background-color: $background-blue;
@@ -11,7 +11,6 @@ nav {
         position: absolute;
     	margin: 0;
         width: 100%;
-        //max-width: 800px;
         text-align: center;
         display: flex;
         align-items: center;
@@ -88,7 +87,7 @@ nav {
 }
 
 @media only screen and (min-width: 768px) {
-    nav {
+    .navigation {
         height: 64px;
 
         h1 {
@@ -102,7 +101,7 @@ nav {
 }
 
 @media only screen and (min-width: 1025px) {
-    nav {
+    .navigation {
     	height: 74px;
 
         #save-btn, #delete-btn {
@@ -112,7 +111,7 @@ nav {
 }
 
 @media only screen and (max-width: 767px) {
-    nav {
+    .navigation {
     	height: 44px;
 
     	h1 {

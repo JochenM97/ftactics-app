@@ -2,7 +2,9 @@
 
 @section('description', 'Make your own tactics with an easy to use, interactive and responsive editor.')
 
-@section('make-tactic')
+@section('konva-viewport', 'user-scalable=no,')
+
+@section('content')
 
 <div id="save-screen">
 	<div id="save-screen-content">
@@ -19,7 +21,7 @@
 	</div>
 </div>
 
-<nav>
+<nav class="navigation">
 	<div class="back-box">
 		<a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
 	</div>

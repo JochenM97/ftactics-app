@@ -7,17 +7,20 @@
 <div class="logo-box">
     <div class="logo"></div>
 </div>
-<div class="form-wrapper">
+<main class="form-wrapper">
     <form method="POST" action="{{ route('login') }}">
         @csrf
         
         <div class="form-content">
-            <a href="{{ url('/login-register') }}" class="back-btn"><img src="{{ URL::to('/') }}/images/icons/back-arrow-black.svg" alt="Back to last page button"></a>
-
-            <header><h1>LOGIN</h1></header>
+            <header>
+                <h1>LOGIN</h1>
+                <span class="or">or</span>
+                <a href="{{ url('/register') }}" class="page-link">Create new account</a>
+            </header>
             
             <div class="input-elements">
                 <div class="form-element">
+                    <label for="email" class="form-label">Email</label>
                     <input id="email" type="email" class="@error('email') form-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
 
                     @error('email')
@@ -28,7 +31,7 @@
                 </div>
 
                 <div class="form-element">
-
+                    <label for="password" class="form-label">Password</label>
                     <input id="password" type="password" class="@error('password') form-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
 
                     @error('password')
@@ -56,9 +59,5 @@
 
         <button type="submit" class="submit-button">CONTINUE</button>
     </form>
-</div>
-@endsection
-
-@section('pagespecificstyles')
-<link href="{{ asset('css/auth.css') }}" rel="stylesheet">
+</main>
 @endsection

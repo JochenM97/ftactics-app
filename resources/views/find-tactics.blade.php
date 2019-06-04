@@ -4,7 +4,6 @@
 
 @section('content')
 
-
 <div class="custom-tactic-nav">
 	<div class="back-box">
 		<a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>

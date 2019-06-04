@@ -7,17 +7,21 @@
 <div class="logo-box">
     <div class="logo"></div>
 </div>
-<div class="form-wrapper">
+<main class="form-wrapper">
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
         <div class="form-content">
-            <a href="{{ url('/login-register') }}" class="back-btn"><img src="{{ URL::to('/') }}/images/icons/back-arrow-black.svg" alt="Back to last page button"></a>
 
-            <header><h1>SIGN UP</h1></header>
+            <header>
+                <h1>SIGN UP</h1>
+                <span class="or">or</span>
+                <a href="{{ url('/login') }}" class="page-link">Log in</a>
+            </header>
 
             <div class="input-elements">
                 <div class="form-element">
+                    <label for="name" class="form-label">Name</label>
                     <input id="name" type="text" class="@error('name') form-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
 
                     @error('name')
@@ -28,6 +32,7 @@
                 </div>
 
                 <div class="form-element">
+                    <label for="email" class="form-label">Email</label>
                     <input id="email" type="email" class="@error('email') form-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Email">
 
                     @error('email')
@@ -38,6 +43,7 @@
                 </div>
 
                 <div class="form-element">
+                    <label for="password" class="form-label">Password</label>
                     <input id="password" type="password" class="@error('password') form-invalid @enderror" name="password" required autocomplete="new-password" autofocus placeholder="Password">
 
                     @error('password')
@@ -48,7 +54,8 @@
                 </div>
 
                 <div class="form-element">
-                    <input id="password-confirm" type="password" class="" name="password_confirmation" required autocomplete="new-password" autofocus placeholder="Confirm password">
+                    <label for="password-confirm" class="form-label">Confirm password</label>
+                    <input id="password-confirm" type="password" class="" name="password-confirm" required autocomplete="new-password" autofocus placeholder="Confirm password">
 
                     @error('password')
                         <span class="form-invalid-feedback" role="alert">
@@ -61,11 +68,6 @@
 
         <button type="submit" class="submit-button">CONTINUE</button>
     </form>
-
-</div>
-@endsection
-
-@section('pagespecificstyles')
-<link href="{{ asset('css/auth.css') }}" rel="stylesheet">
+</main>
 @endsection
 

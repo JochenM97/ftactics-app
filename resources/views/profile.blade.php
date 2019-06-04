@@ -4,7 +4,7 @@
 
 @section('content')
 
-<nav>
+<nav class="navigation">
     <div class="back-box">
         <a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
     </div>
@@ -26,6 +26,7 @@
             
             <div class="input-elements">
             	<div class="form-element">
+                    <label for="name" class="form-label">Name</label>
                     <input id="name" type="text" class="@error('name') form-invalid @enderror" name="name" value="{{ $user->name }}" required autocomplete="name" autofocus placeholder="Name">
 
                     @error('name')
@@ -36,6 +37,7 @@
                 </div>
 
                 <div class="form-element">
+                    <label for="email" class="form-label">Email</label>
                     <input id="email" type="email" class="@error('email') form-invalid @enderror" name="email" value="{{ $user->email }}" required autocomplete="email" autofocus placeholder="Email">
 
                     @error('email')

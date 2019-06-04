@@ -19,10 +19,6 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/make-tactic', 'HomeController@makeTactic')->name('makeTactic');
 
-Route::get('/login-register', function () {
-    return view('auth-home');
-})->name('login-register');
-
 Route::get('/profile', 'HomeController@profile')->name('profile');
 
 Route::post('/save-profile/{id}', 'HomeController@saveProfile')->name('save-profile');

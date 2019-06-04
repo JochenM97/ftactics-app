@@ -2,14 +2,14 @@
 
 @section('description', 'Find, make and save your own football and futsal tactics.')
 
-@section('home')
+@section('content')
 
-<div class="container">
-    <div class="home-header">
+<main class="container">
+    <header class="home-header">
         <div class="logo"></div>
-    </div>
+    </header>
 
-    <div class="home-nav">
+    <nav class="home-nav">
         <div class="nav-box">
             <div class="find">
                 <a href="{{ url('/find-tactics') }}" class="home-link">
@@ -55,11 +55,11 @@
                 </a>
             </div>
         </div>
-    </div>
+    </nav>
 
     <div class="profile">
         <div class="profile-content"><a href="{{ url('/profile') }}" class="home-link"><img src="images/icons/profile-icon.svg" alt="My profile icon">MY PROFILE</a></div>
     </div>
-</div>
+</main>
 
 @endsection
