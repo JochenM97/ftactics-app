@@ -34,3 +34,7 @@ Route::get('/saved-tactics', 'HomeController@showSavedTactics')->name('saved-tac
 Route::get('/saved-tactics/{id}', 'HomeController@showCustomTactic');//->middleware('can:view,App\CustomTactic');
 
 Route::get('/delete-tactic/{id}', 'HomeController@deleteCustomTactic');
+
+Route::get('/find-tactics', 'HomeController@showFindTactics')->name('find-tactics');
+
+Route::get('/find-tactics/{id}', 'HomeController@showStandardTactic');

@@ -1,6 +1,6 @@
-@extends('layout', ['title' => ' | Saved tactics'])
+@extends('layout', ['title' => ' | Find tactics'])
 
-@section('description', 'Rewatch your saved tactics in a smoothly animated way.')
+@section('description', 'Find and discover awesome football and futsal tactics. Get inspired by what you can create with Ftactics.')
 
 @section('content')
 
@@ -10,7 +10,7 @@
 		<a href="{{ url('/') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
 	</div>
 	<header>
-		<h1>SAVED TACTICS</h1>
+		<h1>FIND TACTICS</h1>
 	</header>
 </nav>
 
@@ -18,28 +18,20 @@
 
 <div class="tactics-overview container">
 
-@foreach($customtactics as $customtactic)
+@foreach($standardtactics as $standardtactic)
 
 	@php
 	$i += 1
 	@endphp
 
-	<a href="{{ url('/saved-tactics', $customtactic->id) }}" class="tactic-box">
+	<a href="{{ url('/find-tactics', $standardtactic->id) }}" class="tactic-box">
 		<span class="number">{{ $i }}</span>
 		<span class="number-shadow"></span>
-		<div class="name-box">{{ $customtactic->name }}</div>
+		<div class="name-box">{{ $standardtactic->name }}</div>
 		<img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Show tactic arrow" class="tactic-arrow">
 	</a>
 
 @endforeach
-
-@if($i == 0)
-<div class="no-tactics-box">
-	<h2>No tactics yet?</h2>
-	<span class="message">When you create new tactics they will appear here</span>
-	<a href="{{ url('/make-tactic') }}">GET STARTED</a>
-</div>
-@endif
 
 </div>
 

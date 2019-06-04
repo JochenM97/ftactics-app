@@ -4,12 +4,13 @@ nav {
     background-color: $background-blue;
     border-bottom: 1px solid #fff;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     header {
+        position: absolute;
     	margin: 0;
-        width: 60%;
+        width: 100%;
         //max-width: 800px;
         text-align: center;
         display: flex;
@@ -24,6 +25,7 @@ nav {
 
     .back-box, .save-box, .delete-box {
 		min-width: 20%;
+        z-index: 1;
     }
 
     header, .back-box, .save-box, .delete-box {
@@ -114,7 +116,7 @@ nav {
     	height: 44px;
 
     	h1 {
-    		font-size: 2rem;
+    		font-size: 1.8rem;
     	}
 
         #save-btn, #delete-btn {

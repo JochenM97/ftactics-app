@@ -1,4 +1,4 @@
-@extends('layout', ['title' => ' | View tactic '.$customtactic->name])
+@extends('layout', ['title' => ' | View tactic '.$tactic->name])
 
 @section('description', "Watch your own tactic to show your teammates or remove it if you don't need it anymore.")
 
@@ -8,10 +8,10 @@
 		<a href="{{ url('/saved-tactics') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
 	</div>
 	<header>
-		<h1>{{ $customtactic->name }}</h1>
+		<h1>{{ $tactic->name }}</h1>
 	</header>
 	<div class="delete-box">
-		<a href='{{ url("/delete-tactic/{$customtactic->id}") }}' id="delete-btn">DELETE</a>
+		<a href='{{ url("/delete-tactic/{$tactic->id}") }}' id="delete-btn">DELETE</a>
 	</div>
 </nav>
 
@@ -20,7 +20,7 @@
 </div>
 
 <script>
-	var data = {!! json_encode($customtactic->data) !!};
+	var data = {!! json_encode($tactic->data) !!};
 </script>
 @endsection
 

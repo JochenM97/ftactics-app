@@ -99,15 +99,15 @@ for(var i=0; i<all_layers.length; i++)
 		{
 			case ("red-player"):
 				var objectNumber = layer_object[3];
-			layer_object_id = typeObject + "-" + objectNumber;
+				layer_object_id = typeObject + "-" + objectNumber;
 			break;
 		case ("blue-player"):
-			var objectNumber = layer_object[3];
-			layer_object_id = typeObject + "-" + objectNumber;
+				var objectNumber = layer_object[3];
+				layer_object_id = typeObject + "-" + objectNumber;
 
 			break;
 		case ("ball"):
-			layer_object_id = typeObject;
+				layer_object_id = typeObject;
 			break;
 		}
 
@@ -142,16 +142,16 @@ for(var y=0; y<all_layers.length; y++)
 
 		switch(typeObject)
 		{
-			case ("red-player"):
-				var objectNumber = layer_object[3];
-        layer_object_id = typeObject + "-" + objectNumber;
+		case ("red-player"):
+			var objectNumber = layer_object[3];
+    		layer_object_id = typeObject + "-" + objectNumber;
 			break;
 		case ("blue-player"):
-        var objectNumber = layer_object[3];
-        layer_object_id = typeObject + "-" + objectNumber;
+    		var objectNumber = layer_object[3];
+    		layer_object_id = typeObject + "-" + objectNumber;
 			break;
 		case ("ball"):
-        layer_object_id = typeObject;
+    		layer_object_id = typeObject;
 			break;
 		}
 
@@ -160,8 +160,6 @@ for(var y=0; y<all_layers.length; y++)
 		y_positions[index].push(scale*layer_object[1]);
 	}
 }
-
-console.log(object_ids);
 
 var tl = anime.timeline({
   easing: 'easeOutExpo',
@@ -177,56 +175,64 @@ for(var i=0; i<object_ids.length; i++)
 		newObject.id = object_ids[i];
 		newObject.className = "football";
 		newObject.style.width = 8*scale + "px";
-  	newObject.style.height = 8*scale + "px";
-  	newObject.style.left = x_positions[i][0] + "px";
-  	newObject.style.top = y_positions[i][0] + "px";
-  	field.appendChild(newObject); 
+	  	newObject.style.height = 8*scale + "px";
+	  	newObject.style.left = x_positions[i][0] + "px";
+	  	newObject.style.top = y_positions[i][0] + "px";
+	  	field.appendChild(newObject); 
 	}
 	else if(object_ids[i].slice(0,-2) == "red-player")
 	{
 		newObject.id = object_ids[i];
 		newObject.className = "red-player";
 		newObject.style.width = 10*scale + "px";
-  	newObject.style.height = 10*scale + "px";
-  	newObject.style.left = x_positions[i][0] + "px";
-  	newObject.style.top = y_positions[i][0] + "px";
-  	newObject.innerHTML = object_ids[i].slice(-1);
-  	field.appendChild(newObject); 
+	  	newObject.style.height = 10*scale + "px";
+	  	newObject.style.left = x_positions[i][0] + "px";
+	  	newObject.style.top = y_positions[i][0] + "px";
+	  	newObject.innerHTML = object_ids[i].slice(-1);
+	  	field.appendChild(newObject); 
 	}
 	else if(object_ids[i].slice(0,-2) == "blue-player")
 	{
+		if(object_ids[i] == "blue-player-3")
+		{
+			console.log(x_positions[i][0] + "px");
+			console.log(y_positions[i][0] + "px");
+		}
+
 		newObject.id = object_ids[i];
 		newObject.className = "blue-player";
 		newObject.style.width = 10*scale + "px";
-  	newObject.style.height = 10*scale + "px";
-  	newObject.style.left = x_positions[i][0] + "px";
-  	newObject.style.top = y_positions[i][0] + "px";
-  	newObject.innerHTML = object_ids[i].slice(-1);
-  	field.appendChild(newObject); 
+	  	newObject.style.height = 10*scale + "px";
+	  	newObject.style.left = x_positions[i][0] + "px";
+	  	newObject.style.top = y_positions[i][0] + "px";
+	  	newObject.innerHTML = object_ids[i].slice(-1);
+	  	field.appendChild(newObject); 
 	}
 
 	var target = document.getElementById(object_ids[i]);
 	var object_frames = [];
-  var timeline_framesX = [];
-  var timeline_framesY = [];
+	var timeline_framesX = [];
+	var timeline_framesY = [];
 	for(var y=1; y<x_positions[0].length; y++)
 	{
 		object_frames.push({translateX: (x_positions[i][y]-x_positions[i][0]), translateY: (y_positions[i][y]-y_positions[i][0])},);
-    timeline_framesX.push(x_positions[i][y]-x_positions[i][0]);
-    timeline_framesY.push(y_positions[i][y]-y_positions[i][0]);
+	    timeline_framesX.push(x_positions[i][y]-x_positions[i][0]);
+	    timeline_framesY.push(y_positions[i][y]-y_positions[i][0]);
 	}
 
 	var backToX = x_positions[i][object_frames.length]-x_positions[i][0];
+
+	console.log(object_ids[i]);
+	console.log(x_positions[i][0]);
   
 	anime({
 		targets: target,
 		keyframes: object_frames,
 		easing: 'linear',
-		duration: 3000,
+		duration: 4000,
 		loop: true
 	});
   
-  console.log(timeline_framesX);
   /*
   this.tl.add({
     targets: target,

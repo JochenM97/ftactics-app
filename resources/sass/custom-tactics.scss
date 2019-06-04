@@ -18,6 +18,30 @@ body {
 	padding: 0;
 }
 
+.no-tactics-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	h2 {
+		font-size: 8vh;
+		margin: 10% 0;
+	}
+
+	.message {
+	    display: block;
+	    font-size: 4vh;
+	    text-align: center;
+	    margin-bottom: 10%;
+	}
+
+	a, a:visited {
+		color: $player-blue;
+		font-size: 6vh;
+	}
+}
+
 .tactics-overview {
 	width: 90% !important;
 	-moz-box-sizing: border-box;
@@ -59,7 +83,7 @@ body {
 	
 		.name-box {
 			width: 65%;
-			padding: 15px 20px;
+			padding: 10px;
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
@@ -68,7 +92,7 @@ body {
 		.tactic-arrow {
 			width: 10%;
 			transform: rotate(180deg);
-			padding: 15px;
+			padding: 10px;
 			opacity: 0.2;
 		}
 	}
@@ -193,6 +217,10 @@ nav {
 			}
 		}
     }
+
+    .no-tactics-box  {
+    	margin-top: 60px;
+    }
 }
 
 @media only screen and (min-width: 1025px) {
@@ -218,6 +246,10 @@ nav {
 			}
 		}
     }
+
+    .no-tactics-box  {
+    	margin-top: 70px;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -225,7 +257,7 @@ nav {
     	height: 44px;
 
     	h1 {
-    		font-size: 2rem;
+    		font-size: 1.8rem;
     	}
     }
 
@@ -246,5 +278,9 @@ nav {
 				font-size: 2rem;
 			}
 		}
+    }
+
+    .no-tactics-box  {
+    	margin-top: 50px;
     }
 }

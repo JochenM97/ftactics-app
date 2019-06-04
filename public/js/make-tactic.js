@@ -527,7 +527,6 @@ addBtn.addEventListener("click", function() {
 
 	pushLayer = new Konva.Layer();
 	pushLayer.visible(false);
-	pushLayer.disableHitGraph();
 	pushLayer.name("layer_" + count);
 	stage.add(pushLayer);
 
@@ -593,7 +592,6 @@ removeBtn.addEventListener("click", function() {
 
 
 function onFrameClick(clickedFrame) {
-	currentLayer.draw();
 	// alle layers verborgen maken
 	for(var y=0; y<layersArray.length; y++) {
 		var layer_invisible_string = "." + layersArray[y];
@@ -623,6 +621,7 @@ function onFrameClick(clickedFrame) {
 	layer_visible.visible(true);
 
 	currentLayer = layer_visible;
+	currentLayer.draw();
 
 	var currentLayerIndex = layersArray.indexOf(currentLayer[0].attrs.name);
 

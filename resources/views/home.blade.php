@@ -12,7 +12,7 @@
     <nav>
         <div class="nav-box">
             <div class="find">
-                <a href="" class="home-link">
+                <a href="{{ url('/find-tactics') }}" class="home-link">
                     <div class="action-icon">
                         <div class="outer-circle">
                             <div class="inner-circle"></div>

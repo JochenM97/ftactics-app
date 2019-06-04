@@ -11,12 +11,13 @@ nav {
   background-color: #001843;
   border-bottom: 1px solid #fff;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 nav header {
+  position: absolute;
   margin: 0;
-  width: 60%;
+  width: 100%;
   text-align: center;
   display: flex;
   align-items: center;
@@ -28,6 +29,7 @@ nav header h1 {
 }
 nav .back-box, nav .save-box, nav .delete-box {
   min-width: 20%;
+  z-index: 1;
 }
 nav header, nav .back-box, nav .save-box, nav .delete-box {
   height: 100%;
@@ -99,7 +101,7 @@ nav .save-box #delete-btn, nav .delete-box #delete-btn {
     height: 44px;
   }
   nav h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   nav #save-btn, nav #delete-btn {
     font-size: 1.1rem;

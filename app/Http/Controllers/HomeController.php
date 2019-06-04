@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\CustomTactic;
+use App\StandardTactic;
 
 class HomeController extends Controller
 {
@@ -90,7 +91,7 @@ class HomeController extends Controller
         $customtactic = CustomTactic::findOrFail($customtactic_id);
         $this->authorize('view', $customtactic);
 
-        return view('view-tactic')->with('customtactic', $customtactic);
+        return view('view-tactic')->with('tactic', $customtactic);
     }
 
     public function deleteCustomTactic($customtactic_id) {     
@@ -102,5 +103,19 @@ class HomeController extends Controller
         CustomTactic::where('id', $customtactic_id)->delete();
         return redirect('/saved-tactics')
         ->with('response', 'Tactic deleted successfully.'); 
+    }
+
+    public function showFindTactics()
+    {
+        $standardtactics = StandardTactic::all();
+        return view('find-tactics', ['standardtactics' => $standardtactics]);
+    }
+
+    public function showStandardTactic($standardtactic_id)
+    {
+        $standardtactic = StandardTactic::findOrFail($standardtactic_id);
+        $this->authorize('view', $standardtactic);
+
+        return view('view-tactic')->with('tactic', $standardtactic);
     }
 }
