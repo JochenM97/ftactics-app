@@ -55,7 +55,7 @@
 
                 <div class="form-element">
                     <label for="password-confirm" class="form-label">Confirm password</label>
-                    <input id="password-confirm" type="password" class="" name="password-confirm" required autocomplete="new-password" autofocus placeholder="Confirm password">
+                    <input id="password-confirm" type="password" class="" name="password_confirmation" required autocomplete="new-password" autofocus placeholder="Confirm password">
 
                     @error('password')
                         <span class="form-invalid-feedback" role="alert">

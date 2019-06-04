@@ -114,7 +114,6 @@ class HomeController extends Controller
     public function showStandardTactic($standardtactic_id)
     {
         $standardtactic = StandardTactic::findOrFail($standardtactic_id);
-        $this->authorize('view', $standardtactic);
 
         return view('view-tactic')->with('tactic', $standardtactic);
     }

@@ -5,14 +5,16 @@
 @section('content')
 <nav class="navigation">
 	<div class="back-box">
-		<a href="{{ url('/saved-tactics') }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
+		<a href="{{ url()->previous() }}"><img src="{{ URL::to('/') }}/images/icons/back-arrow.svg" alt="Back to last page button"></a>
 	</div>
 	<header>
 		<h1>{{ $tactic->name }}</h1>
 	</header>
+	@if($tactic->user)
 	<div class="delete-box">
 		<a href='{{ url("/delete-tactic/{$tactic->id}") }}' id="delete-btn">DELETE</a>
 	</div>
+	@endif
 </nav>
 
 <div id="stage-parent">
