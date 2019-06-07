@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+    	<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-132804487-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-132804487-2');
+		</script>
 	    <meta name="viewport" content="@yield('konva-viewport')width=device-width,initial-scale=1.0">
 	  	<meta name="theme-color" content="#001843">
 	    <meta charset="UTF-8">
@@ -18,6 +27,7 @@
 	    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
+    	<!--<div id="orientation-warning"></div>-->
     	@yield('content')
         @yield('pagespecificscripts')
     </body>

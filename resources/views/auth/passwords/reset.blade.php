@@ -48,7 +48,9 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="submit-button">CONTINUE</button>
+        <div class="submit-box">
+            <button type="submit" class="submit-button">CONTINUE</button>
+        </div>
     </form>
 </main>
 @endsection

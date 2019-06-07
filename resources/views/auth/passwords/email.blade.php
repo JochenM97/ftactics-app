@@ -34,7 +34,9 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="submit-button">SEND RESET LINK</button>
+        <div class="submit-box">
+            <button type="submit" class="submit-button">SEND RESET LINK</button>
+        </div>
     </form>
 </main>
 @endsection

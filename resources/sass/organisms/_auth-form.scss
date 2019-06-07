@@ -9,20 +9,25 @@
     box-sizing: border-box;
 
 	form {
+		background-color: #fff;
 		color: $background-blue;
 		width: 100%;
 		position: relative;
-		border-radius: 2px;
 		-webkit-box-shadow: 0px 28px 50px 0px rgba(0,0,0,0.56);
 		-moz-box-shadow: 0px 28px 50px 0px rgba(0,0,0,0.56);
 		box-shadow: 0px 28px 50px 0px rgba(0,0,0,0.56);
+	    border-radius: 4px;
+	    box-sizing: border-box;
 
 		.form-content {
 			background-color: #fff;
+			border-radius: 4px 4px 0 0;
 		}
 
 		.back-btn {
-			position: absolute;
+			user-select: none;
+			position: relative;
+    		margin-bottom: 20px;
 			left: 28px;
 		    height: 36px;
 		    display: flex;
@@ -38,11 +43,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-
-			.page-link {
-				margin-left: 15px;
-				color: rgba(0,40,112,1);
-			}
+			flex-direction: column;
 
 			.or {
 				color: #8B96A9;
@@ -52,6 +53,11 @@
 			h1 {
 				margin: 0;
 				display: inline-block;
+				width: 100%;
+			    padding-right: 25px;
+			    padding-left: 25px;
+			    box-sizing: border-box;
+			    text-align: left;
 			}
 		}
 
@@ -63,20 +69,26 @@
 
     		.form-label {
 			    display: inline-block;
-			    margin-bottom: 10px;
-			    font-weight: 700;
+			    margin-bottom: 8px;
+			    font-weight: 500;
     		}
 
     		input {
     			width: 100%;
-    			padding: 10px;
+    			padding: 10px 14px;
     			box-sizing: border-box;
     			color: $background-blue;
     			border: 1px solid #8A95A8;
+    			border-radius: 4px;
     		}
 
     		input::placeholder {
     			color: #A6AEBD;
+    		}
+
+    		input:focus {
+    			border-color: $background-blue-light;
+    			outline: none;
     		}
 
     		.form-invalid-feedback {
@@ -101,7 +113,7 @@
     			margin-left: 3px;
 
     			a, a:visited {
-    				color: #5C6C87;
+    				color: rgba(0,40,112,1);
     			}
     		}
 		}
@@ -110,14 +122,35 @@
 			width: 100%;
 			display: block;
 			border: none;
-			background-color: $background-blue;
+			background-color: $background-blue-light;
 			color: #fff;
 			font-weight: bold;
 			border-radius: 0 0 2px 2px;
 			cursor: pointer;
+			border-radius: 44px;
+		}
+
+		.submit-box {
+			padding: 25px 25px 40px 25px;
+
+			.form-message {
+				margin-top: 25px;
+			    display: block;
+			    text-align: center;
+
+			    .page-link, .page-link:visited {
+					color: rgba(0,40,112,1);
+				}
+			}
 		}
 
 		.submit-button:focus {outline:0;}
+	}
+
+	.profile-form {
+		.submit-button {
+			font-family: 'BebasNeue', 'Arial', sans-serif;
+		}
 	}
 }
 
@@ -134,20 +167,18 @@
 	}
 
 	.form-wrapper form {
+	    padding: 0 25px;
+
 		.back-btn {
 			top: 40px;
 		}
 
 		header {
 			padding-top: 40px;
-			padding-bottom: 20px;
+			padding-bottom: 15px;
 
 			h1 {
-				font-size: 1.5rem;
-			}
-
-			.page-link {
-				font-size: 1.3rem;
+				font-size: 2.5rem;
 			}
 		}
 
@@ -165,13 +196,39 @@
 			}
 		}
 
+		.submit-box {
+			.form-message {
+				font-size: 1rem;
+			}
+		}
+
+		.other-actions-box {
+		    font-size: 1rem;
+		}
+
 		.input-elements {
-			padding: 20px 0;
+			padding-top: 20px;
 		}
 
 		.submit-button {
 			height: 60px;
 			font-size: 1.1rem;
+		}
+	}
+
+	.profile-form .submit-box {
+		.submit-button {
+			font-size: 1.3rem;
+			font-weight: 500;
+		}
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	.profile-form .submit-box {
+		.submit-button {
+			font-size: 1.5rem;
+			font-weight: 500;
 		}
 	}
 }
@@ -186,11 +243,7 @@
 			padding-top: 30px;
 
 			h1 {
-				font-size: 1.2rem;
-			}
-
-			.page-link {
-				font-size: 1rem;
+				font-size: 1.5rem;
 			}
 		}
 
@@ -208,19 +261,38 @@
 			}
 		}
 
+		.other-actions-box {
+		    font-size: 0.8rem;
+		}
+
 		.input-elements {
-			padding: 15px 0;
+			padding-top: 15px;
+			max-height: 240px;
+		    overflow-y: scroll;
 		}
 
 		.submit-button {
 			height: 50px;
 			font-size: 0.8rem;
 		}
+
+		.submit-box {
+			.form-message {
+				font-size: 0.8rem;
+			}
+		}
+	}
+
+	.profile-form .submit-box {
+		.submit-button {
+			font-size: 1.1rem;
+			font-weight: 500;
+		}
 	}
 
 	.auth-links {
 		.auth-link {
-			height: 60px;
+			height: 40px;
 			font-size: 14px;
 		}
 
@@ -236,11 +308,7 @@
 			padding-top: 25px;
 
 			h1 {
-				font-size: 1.1rem;
-			}
-
-			.page-link {
-				font-size: 0.9rem;
+				font-size: 1.3rem;
 			}
 		}
 
@@ -259,12 +327,25 @@
 		}
 
 		.input-elements {
-			padding: 10px 0;
+			padding-top: 10px;
 		}
 
 		.submit-button {
-			height: 40px;
+			height: 35px;
 			font-size: 0.7rem;
+		}
+
+		.submit-box {
+			.form-message {
+				font-size: 0.7rem;
+			}
+		}
+	}
+
+	.profile-form .submit-box {
+		.submit-button {
+			font-size: 1rem;
+			font-weight: 500;
 		}
 	}
 }

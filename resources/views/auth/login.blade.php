@@ -13,9 +13,7 @@
         
         <div class="form-content">
             <header>
-                <h1>LOGIN</h1>
-                <span class="or">or</span>
-                <a href="{{ url('/register') }}" class="page-link">Create new account</a>
+                <h1>Welcome back</h1>
             </header>
             
             <div class="input-elements">
@@ -43,11 +41,8 @@
             
         
                 <div class="other-actions-box">
-                    <div class="remember">
-                        <input class="" type="checkbox" name="remember" id="remember" value="{{ old('remember') ? 'checked' : '' }}">
 
-                        <label class="" for="remember">Remember me</label>
-                    </div>
+                    
                     <div class="login">
                         @if (Route::has('password.request'))
                             <a href="{{ route('password.request') }}">Forgot your password?</a>
@@ -56,8 +51,10 @@
                 </div>
             </div>
         </div>
-
-        <button type="submit" class="submit-button">CONTINUE</button>
+        <div class="submit-box">
+            <button type="submit" class="submit-button">SIGN IN</button>
+            <span class="form-message">Don't have an account? <a href="{{ url('/register') }}" class="page-link">Sign up</a></span>
+        </div>
     </form>
 </main>
 @endsection

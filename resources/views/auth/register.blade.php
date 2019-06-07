@@ -14,9 +14,7 @@
         <div class="form-content">
 
             <header>
-                <h1>SIGN UP</h1>
-                <span class="or">or</span>
-                <a href="{{ url('/login') }}" class="page-link">Log in</a>
+                <h1>Create account</h1>
             </header>
 
             <div class="input-elements">
@@ -65,8 +63,10 @@
                 </div>
             </div>
         </div>
-
-        <button type="submit" class="submit-button">CONTINUE</button>
+        <div class="submit-box">
+            <button type="submit" class="submit-button">SIGN UP</button>
+            <span class="form-message">Already have an account? <a href="{{ url('/login') }}" class="page-link">Sign in</a></span>
+        </div>
     </form>
 </main>
 @endsection

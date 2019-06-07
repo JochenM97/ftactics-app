@@ -18,7 +18,7 @@
 </nav>
 
 <div class="form-wrapper">
-    <form method="POST" action="{{ url('/save-profile', $user->id) }}">
+    <form method="POST" action="{{ url('/save-profile', $user->id) }}" class="profile-form">
         @csrf
         
         <div class="form-content">
@@ -48,8 +48,9 @@
                 </div>
             </div>
         </div>
-
-        <button type="submit" class="submit-button">SAVE</button>
+        <div class="submit-box">
+            <button type="submit" class="submit-button">SAVE</button>
+        </div>
     </form>
 </div>
 
