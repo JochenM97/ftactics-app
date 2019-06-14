@@ -31,16 +31,12 @@ function fitStageIntoParentContainer()
 	var containerHeight;
 	if(container.offsetHeight == 0)
 	{
-		containerHeight = window.innerHeight-interfaceElementsHeight; // aanpassen op basis van toolbox height en nav height (berekenen)
+		containerHeight = window.innerHeight-interfaceElementsHeight;
 	}
 	else
 	{
 		containerHeight = container.offsetHeight-interfaceElementsHeight;
 	}
-
-	var scaleTest = containerHeight / stageHeight; 
-	
-	var scaleTestWidth = containerWidth / stageWidth;
 
 	if(container.offsetWidth > (containerHeight/1.5))
 	{
