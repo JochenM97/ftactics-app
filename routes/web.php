@@ -34,3 +34,5 @@ Route::get('/delete-tactic/{id}', 'HomeController@deleteCustomTactic');
 Route::get('/find-tactics', 'HomeController@showFindTactics')->name('find-tactics');
 
 Route::get('/find-tactics/{id}', 'HomeController@showStandardTactic');
+
+Route::get('/shared-tactics/{id}', 'PublicController@showSharedTactic');

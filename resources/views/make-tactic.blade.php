@@ -13,7 +13,7 @@
         	@csrf
 			<div class="form-content">
 	        	<label for="name">Tactic name</label>
-				<input id="name" type="text" class="@error('name') form-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Counter Attack">
+				<input id="name" type="text" class="@error('name') form-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Counter Attack">
 				<input id="data" type="hidden" name="data" value="">
         		<button type="submit" id="submit-tactic" class="submit-button">SAVE TACTIC</button>
         	</div>

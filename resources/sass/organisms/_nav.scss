@@ -22,12 +22,12 @@
         }
     }
 
-    .back-box, .save-box, .delete-box {
+    .back-box, .save-box, .delete-box, .settings-box {
 		min-width: 20%;
         z-index: 1;
     }
 
-    header, .back-box, .save-box, .delete-box {
+    header, .back-box, .save-box, .delete-box, .settings-box {
         height: 100%;
     }
 
@@ -36,12 +36,11 @@
         justify-content: flex-start;
         align-items: center;
         padding-left: 15px;
-        cursor: pointer;
 
         a {
             height: 100%;
             display: flex;
-            
+            cursor: pointer;
             align-items: center;
 
             img {
@@ -50,7 +49,7 @@
         }
     }
 
-    .save-box, .delete-box {
+    .save-box, .delete-box, .settings-box {
     	display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -82,6 +81,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+    }
+
+    .settings-box {
+        img {
+            height: 50%;
+            cursor: pointer;
         }
     }
 }

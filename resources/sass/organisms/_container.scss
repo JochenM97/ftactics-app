@@ -11,6 +11,11 @@
 	background-image: url('../images/background-field.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
+	overscroll-behavior: none;
+
+	div, canvas {
+		overscroll-behavior: none;
+	}
 }
 
 #stage-parent {

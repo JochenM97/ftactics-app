@@ -1141,11 +1141,11 @@
   margin: 0;
   text-transform: uppercase;
 }
-.navigation .back-box, .navigation .save-box, .navigation .delete-box {
+.navigation .back-box, .navigation .save-box, .navigation .delete-box, .navigation .settings-box {
   min-width: 20%;
   z-index: 1;
 }
-.navigation header, .navigation .back-box, .navigation .save-box, .navigation .delete-box {
+.navigation header, .navigation .back-box, .navigation .save-box, .navigation .delete-box, .navigation .settings-box {
   height: 100%;
 }
 .navigation .back-box {
@@ -1153,23 +1153,23 @@
   justify-content: flex-start;
   align-items: center;
   padding-left: 15px;
-  cursor: pointer;
 }
 .navigation .back-box a {
   height: 100%;
   display: flex;
+  cursor: pointer;
   align-items: center;
 }
 .navigation .back-box a img {
   height: 50%;
 }
-.navigation .save-box, .navigation .delete-box {
+.navigation .save-box, .navigation .delete-box, .navigation .settings-box {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 15px;
 }
-.navigation .save-box #save-btn, .navigation .save-box #delete-btn, .navigation .delete-box #save-btn, .navigation .delete-box #delete-btn {
+.navigation .save-box #save-btn, .navigation .save-box #delete-btn, .navigation .delete-box #save-btn, .navigation .delete-box #delete-btn, .navigation .settings-box #save-btn, .navigation .settings-box #delete-btn {
   height: 60%;
   text-align: center;
   color: #fff;
@@ -1179,16 +1179,20 @@
   width: 100%;
   cursor: pointer;
 }
-.navigation .save-box #save-btn, .navigation .delete-box #save-btn {
+.navigation .save-box #save-btn, .navigation .delete-box #save-btn, .navigation .settings-box #save-btn {
   background: linear-gradient(to right, #00f6f1 0%, #006d6b 100%);
   line-height: 60%;
 }
-.navigation .save-box #delete-btn, .navigation .delete-box #delete-btn {
+.navigation .save-box #delete-btn, .navigation .delete-box #delete-btn, .navigation .settings-box #delete-btn {
   text-decoration: none;
   background: linear-gradient(to bottom left, #ff005a 0%, #77002a 100%);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.navigation .settings-box img {
+  height: 50%;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1235,6 +1239,12 @@
   background-image: url("../images/background-field.svg");
   background-size: contain;
   background-repeat: no-repeat;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+#container div, #container canvas {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 
 #stage-parent {
@@ -1332,6 +1342,8 @@
   z-index: 100;
   background: linear-gradient(to top, #002464 0%, #001843 100%);
   transition: height 0.4s ease;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
 }
 #save-screen #save-screen-content {
   position: absolute;
@@ -1413,6 +1425,45 @@
 }
 @media only screen and (max-width: 767px) {
   #save-screen #close-save-screen {
+    height: 26px;
+  }
+}
+#settings-screen {
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  z-index: 100;
+  background: linear-gradient(to top, #002464 0%, #001843 100%);
+  transition: height 0.4s ease;
+}
+#settings-screen #settings-screen-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+#settings-screen #settings-screen-content #close-settings-screen {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 101;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  #settings-screen #close-settings-screen {
+    height: 38px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  #settings-screen #close-settings-screen {
+    height: 44px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #settings-screen #close-settings-screen {
     height: 26px;
   }
 }
@@ -1649,7 +1700,7 @@
   }
   .form-wrapper form .input-elements {
     padding-top: 15px;
-    max-height: 240px;
+    max-height: 200px;
     overflow-y: scroll;
   }
   .form-wrapper form .submit-button {
@@ -1716,12 +1767,16 @@
 }
 .logo-box .logo {
   height: 100%;
+  min-height: 100%;
+  width: 100%;
+  min-width: 100%;
   box-sizing: border-box;
   background-clip: content-box;
   background-image: url("../images/ftactics-logo.svg");
   background-repeat: no-repeat;
   background-origin: content-box;
   background-position: center;
+  background-size: contain;
 }
 
 .form-wrapper {
