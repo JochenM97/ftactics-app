@@ -61,7 +61,7 @@
 	<div id="field"></div>
 </div>
 
-<div id="toolbar">
+<div class="animation-toolbar">
 	<button id="play-animation">START</button>
 	<button id="reset-animation">RESET</button>
 </div>

@@ -218,13 +218,13 @@ for(var i=0; i<object_ids.length; i++)
 
 var play = document.getElementById("play-animation");
 var reset = document.getElementById("reset-animation");
-var restart = false;
 
 var animeAnimations = [];
 
 var started = false;
 var startPlaying = false;
 var firsttime = true;
+var restart = false;
 
 play.addEventListener("click", function() {
 	// eerste keer animatie uitvoeren
@@ -267,15 +267,6 @@ play.addEventListener("click", function() {
 			firsttime = false;
 			play.innerHTML = "PAUSE";
 		}
-		/*
-		else
-		{
-			for(var i=0; i<animeAnimations.length; i++)
-			{
-				animeAnimations[i].restart();
-			}
-		}
-		*/
 
 		started = true;
 		console.log(animeAnimations);
@@ -321,31 +312,12 @@ play.addEventListener("click", function() {
 });
 
 reset.addEventListener("click", function() {
-	/*
-	for(var i=0; i<object_ids.length; i++)
-	{
-		var target = document.getElementById(object_ids[i]);
-		var object_frames = [];
-
-		object_frames.push({translateX: 0, translateY: 0, duration: 2000},);
-		anime({
-			targets: target,
-			keyframes: object_frames,
-			easing: 'linear',
-			loop: false
-		});
-				
-	}
-	*/
 	for(var i=0; i<animeAnimations.length; i++)
 	{
-		//animeAnimations[i].paused = false;
-		//animeAnimations[i].update = true;
 		animeAnimations[i].reset();
 	}
 	startPlaying = false;
 	play.innerHTML = "START";
-	//started = false;
 });
 
 
