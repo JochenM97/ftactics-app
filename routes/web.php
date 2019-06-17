@@ -36,3 +36,7 @@ Route::get('/find-tactics', 'HomeController@showFindTactics')->name('find-tactic
 Route::get('/find-tactics/{id}', 'HomeController@showStandardTactic');
 
 Route::get('/shared-tactics/{id}', 'PublicController@showSharedTactic');
+
+Route::get('/edit-tactic/{id}', 'HomeController@editCustomtactic');
+
+Route::post('/save-edited-tactic/{id}', 'HomeController@postEditCustomtactic');

@@ -1140,12 +1140,15 @@
 .navigation header h1 {
   margin: 0;
   text-transform: uppercase;
+  max-width: 60%;
+  box-sizing: border-box;
+  position: absolute;
 }
-.navigation .back-box, .navigation .save-box, .navigation .delete-box, .navigation .settings-box {
+.navigation .back-box, .navigation .save-box, .navigation .delete-box, .navigation .settings-box, .navigation .sign-up-box {
   min-width: 20%;
   z-index: 1;
 }
-.navigation header, .navigation .back-box, .navigation .save-box, .navigation .delete-box, .navigation .settings-box {
+.navigation header, .navigation .back-box, .navigation .save-box, .navigation .delete-box, .navigation .settings-box, .navigation .sign-up-box {
   height: 100%;
 }
 .navigation .back-box {
@@ -1163,13 +1166,13 @@
 .navigation .back-box a img {
   height: 50%;
 }
-.navigation .save-box, .navigation .delete-box, .navigation .settings-box {
+.navigation .save-box, .navigation .delete-box, .navigation .settings-box, .navigation .sign-up-box {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 15px;
 }
-.navigation .save-box #save-btn, .navigation .save-box #delete-btn, .navigation .delete-box #save-btn, .navigation .delete-box #delete-btn, .navigation .settings-box #save-btn, .navigation .settings-box #delete-btn {
+.navigation .save-box #save-btn, .navigation .save-box #delete-btn, .navigation .save-box .sign-up-btn, .navigation .delete-box #save-btn, .navigation .delete-box #delete-btn, .navigation .delete-box .sign-up-btn, .navigation .settings-box #save-btn, .navigation .settings-box #delete-btn, .navigation .settings-box .sign-up-btn, .navigation .sign-up-box #save-btn, .navigation .sign-up-box #delete-btn, .navigation .sign-up-box .sign-up-btn {
   height: 60%;
   text-align: center;
   color: #fff;
@@ -1179,11 +1182,18 @@
   width: 100%;
   cursor: pointer;
 }
-.navigation .save-box #save-btn, .navigation .delete-box #save-btn, .navigation .settings-box #save-btn {
+.navigation .save-box #save-btn, .navigation .save-box .sign-up-btn, .navigation .delete-box #save-btn, .navigation .delete-box .sign-up-btn, .navigation .settings-box #save-btn, .navigation .settings-box .sign-up-btn, .navigation .sign-up-box #save-btn, .navigation .sign-up-box .sign-up-btn {
   background: linear-gradient(to right, #00f6f1 0%, #006d6b 100%);
   line-height: 60%;
 }
-.navigation .save-box #delete-btn, .navigation .delete-box #delete-btn, .navigation .settings-box #delete-btn {
+.navigation .save-box .sign-up-btn, .navigation .delete-box .sign-up-btn, .navigation .settings-box .sign-up-btn, .navigation .sign-up-box .sign-up-btn {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation .save-box #delete-btn, .navigation .delete-box #delete-btn, .navigation .settings-box #delete-btn, .navigation .sign-up-box #delete-btn {
   text-decoration: none;
   background: linear-gradient(to bottom left, #ff005a 0%, #77002a 100%);
   display: flex;
@@ -1194,6 +1204,10 @@
   height: 60%;
   cursor: pointer;
 }
+.navigation .sign-up-box {
+  position: absolute;
+  right: 0;
+}
 
 @media only screen and (min-width: 768px) {
   .navigation {
@@ -1201,8 +1215,9 @@
   }
   .navigation h1 {
     font-size: 2.4rem;
+    top: 12px;
   }
-  .navigation #save-btn, .navigation #delete-btn {
+  .navigation #save-btn, .navigation #delete-btn, .navigation .sign-up-btn {
     font-size: 1.3rem;
   }
 }
@@ -1210,7 +1225,10 @@
   .navigation {
     height: 74px;
   }
-  .navigation #save-btn, .navigation #delete-btn {
+  .navigation h1 {
+    top: 15px;
+  }
+  .navigation #save-btn, .navigation #delete-btn, .navigation .sign-up-btn {
     font-size: 1.5rem;
   }
 }
@@ -1220,8 +1238,9 @@
   }
   .navigation h1 {
     font-size: 1.8rem;
+    top: 9px;
   }
-  .navigation #save-btn, .navigation #delete-btn {
+  .navigation #save-btn, .navigation #delete-btn, .navigation .sign-up-btn {
     font-size: 1.1rem;
   }
 }
@@ -2565,7 +2584,7 @@ RewriteEngine On
   min-height: 1px;
   margin: 0 auto;
   position: absolute;
-  top: 52%;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -2579,7 +2598,7 @@ RewriteEngine On
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 21px;
+  font-size: 3vh;
 }
 
 .blue-player {
@@ -2601,7 +2620,6 @@ RewriteEngine On
 
 .animation-toolbar {
   width: 100%;
-  height: 50px;
   position: fixed;
   bottom: 0;
   display: flex;
@@ -2617,15 +2635,20 @@ RewriteEngine On
           user-select: none;
   margin: 0 5px;
   border: none;
-  background-color: #172D54;
   color: #fff;
   position: relative;
   border-radius: 45px;
   font-family: "BebasNeue", "Arial", sans-serif;
   outline: none;
 }
-.animation-toolbar #play-animation {
-  margin-right: 20px;
+.animation-toolbar .play-button {
+  background-color: #47855A;
+}
+.animation-toolbar .pause-button {
+  background-color: #8C271E;
+}
+.animation-toolbar #reset-animation {
+  background-color: #415373;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2636,6 +2659,9 @@ RewriteEngine On
     height: 50px;
     width: 200px;
     font-size: 1.5rem;
+  }
+  .animation-toolbar #play-animation {
+    margin-right: 30px;
   }
 }
 @media only screen and (min-width: 1025px) {
@@ -2648,12 +2674,15 @@ RewriteEngine On
 }
 @media only screen and (max-width: 767px) {
   .animation-toolbar {
-    height: 50px;
+    height: 60px;
   }
   .animation-toolbar #play-animation, .animation-toolbar #reset-animation {
-    height: 30px;
+    height: 40px;
     width: 100px;
     font-size: 1.1rem;
+  }
+  .animation-toolbar #play-animation {
+    margin-right: 20px;
   }
 }
 html, body, #stage-parent {

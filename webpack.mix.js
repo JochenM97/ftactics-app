@@ -29,8 +29,9 @@ mix.js('resources/js/app.js', 'public/js');
 mix.scripts([
     'resources/js/anime.min.js',
     'resources/js/animate-tactic.js',
-    'resources/js/tactic-settings.js',
 ], 'public/js/view-tactic.js');
+
+mix.js('resources/js/edit-tactic.js', 'public/js');
 
 mix.sass('resources/sass/app.scss', 'public/css')
 	.options({

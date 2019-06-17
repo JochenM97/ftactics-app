@@ -7,6 +7,9 @@
 	<header>
 		<h1>{{ $tactic->name }}</h1>
 	</header>
+	<div class="sign-up-box">
+		<a href="{{ url('/register') }}" class="sign-up-btn">SIGN UP</a>
+	</div>
 </nav>
 
 <div id="stage-parent">
@@ -14,7 +17,7 @@
 </div>
 
 <div class="animation-toolbar">
-	<button id="play-animation">START</button>
+	<button class="play-button" id="play-animation">START</button>
 	<button id="reset-animation">RESET</button>
 </div>
 

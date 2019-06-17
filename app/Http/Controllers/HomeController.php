@@ -88,10 +88,41 @@ class HomeController extends Controller
 
     public function showCustomTactic($customtactic_id)
     {
-        $customtactic = CustomTactic::findOrFail($customtactic_id);
+        try {
+            $customtactic = CustomTactic::findOrFail($customtactic_id);
+        } catch (\Exception $e) { 
+            return redirect('/saved-tactics')->with('warning', 'This tactic does not exist.'); 
+        }
+
         $this->authorize('view', $customtactic);
 
         return view('view-tactic')->with('tactic', $customtactic);
+    }
+
+    public function editCustomtactic($customtactic_id) {
+        try {
+            $customtactic = CustomTactic::findOrFail($customtactic_id);
+        } catch (\Exception $e) { 
+            return redirect('/saved-tactics')->with('warning', 'This tactic does not exist.'); 
+        }
+        return view('edit-tactic')->with('tactic', $customtactic);
+    }
+
+    public function postEditCustomtactic(Request $request, $customtactic_id) {
+        $this->validate($request, [
+            'name' => 'required',
+            'data' => 'required',
+        ]);
+        $customtactic = new CustomTactic;
+        $customtactic->name = $request->input('name');
+        $customtactic->data = $request->input('data');
+
+        $updatedata = array(
+            'name' => $customtactic->name,
+            'data' => $customtactic->data,
+        );
+        CustomTactic::where('id', $customtactic_id)->update($updatedata);
+        return redirect('/saved-tactics/'.$customtactic_id)->with('tactic', $customtactic);
     }
 
     public function deleteCustomTactic($customtactic_id) {     

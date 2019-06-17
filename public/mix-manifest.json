@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/edit-tactic.js": "/js/edit-tactic.js",
     "/js/make-tactic.js": "/js/make-tactic.js",
     "/js/view-tactic.js": "/js/view-tactic.js"
 }

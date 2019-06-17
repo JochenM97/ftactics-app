@@ -225,6 +225,7 @@ var started = false;
 var startPlaying = false;
 var firsttime = true;
 var restart = false;
+var total_duration = 0;
 
 play.addEventListener("click", function() {
 	// eerste keer animatie uitvoeren
@@ -258,18 +259,18 @@ play.addEventListener("click", function() {
 					    restart = true;
 					    startPlaying = false;
 					    play.innerHTML = "RESTART";
+					    play.className = "play-button";
 					}
 				});
 
 				animeAnimations.push(myAnimation);
-
 			}
 			firsttime = false;
 			play.innerHTML = "PAUSE";
+			play.className = "pause-button";
 		}
 
 		started = true;
-		console.log(animeAnimations);
 	}
 
 	// nadat animatie eerste keer werd uitgevoerd
@@ -279,6 +280,8 @@ play.addEventListener("click", function() {
 		{
 			// indien animatie reeds bezig - op pauze zetten
 			play.innerHTML = "RESUME";
+			play.className = "play-button";
+
 			startPlaying = false;
 			for(var i=0; i<object_ids.length; i++)
 			{
@@ -287,8 +290,9 @@ play.addEventListener("click", function() {
 		}
 		else 
 		{
-			console.log(restart);
 			play.innerHTML = "PAUSE";
+			play.className = "pause-button";;
+
 			if(restart == false) 
 			{
 				for(var i=0; i<animeAnimations.length; i++)
@@ -299,7 +303,8 @@ play.addEventListener("click", function() {
 			else
 			{
 				play.innerHTML = "PAUSE";
-				console.log("restart");
+				play.className = "pause-button";
+
 				for(var i=0; i<animeAnimations.length; i++)
 				{
 					animeAnimations[i].restart();
@@ -318,9 +323,7 @@ reset.addEventListener("click", function() {
 	}
 	startPlaying = false;
 	play.innerHTML = "START";
+	play.className = "play-button";
+	//play.classList.toggle("play-button");
+	//play.classList.toggle("pause-button");
 });
-
-
-function countSteps() {
-
-}

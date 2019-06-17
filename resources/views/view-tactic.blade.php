@@ -36,7 +36,7 @@
 			<span class="or">OR</span>
 			<a class="messenger-link" href='fb-messenger://share/?link= {{ URL::to("/")."/shared-tactics/{$tactic->id}" }}&app_id=1167945663386898'>Send In Messenger</a>
 			@endif
-
+			<a href='{{ url("/edit-tactic/{$tactic->id}") }}'>EDIT</a>
 			<a href='{{ url("/delete-tactic/{$tactic->id}") }}' id="delete-btn">DELETE</a>
 		</div>
 	</div>
@@ -62,7 +62,7 @@
 </div>
 
 <div class="animation-toolbar">
-	<button id="play-animation">START</button>
+	<button class="play-button" id="play-animation">START</button>
 	<button id="reset-animation">RESET</button>
 </div>
 
@@ -73,4 +73,33 @@
 
 @section('pagespecificscripts')
 <script type="text/javascript" src="{{ asset('js/view-tactic.js') }}"></script>
+<script type="text/javascript">
+	var settingsBtn = document.getElementById("settings-btn");
+	var settingsScreen = document.getElementById("settings-screen");
+	var closeScreen = document.getElementById("close-settings-screen");
+	var closeScreenContent = document.getElementById("settings-screen-content");
+
+	closeScreen.addEventListener("click", function()
+	{
+		settingsScreen.style.height = "0%";
+		
+		closeScreenContent.style.opacity = "0";
+		setTimeout(function(){ closeScreenContent.style.display = "none"; }, 400);
+	});
+
+	settingsBtn.addEventListener("click", function() 
+	{
+		// show save screen
+		settingsScreen.style.height = "100%";
+		closeScreenContent.style.display = "block";
+		setTimeout(function(){ closeScreenContent.style.opacity = "1"; }, 100);
+	});
+
+	function copyText()
+	{
+		var copyLink = document.getElementById("copy-link");
+	  	copyLink.select();
+	  	document.execCommand("copy");
+	}
+</script>
 @endsection
