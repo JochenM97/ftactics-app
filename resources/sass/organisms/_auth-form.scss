@@ -30,7 +30,7 @@
     		margin-bottom: 20px;
 			left: 28px;
 		    height: 36px;
-		    display: flex;
+		    display: inline-flex;
 		    align-items: center;
 
 		    img {
@@ -44,11 +44,6 @@
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-
-			.or {
-				color: #8B96A9;
-				margin-left: 15px;
-			}
 
 			h1 {
 				margin: 0;
@@ -79,7 +74,7 @@
     			box-sizing: border-box;
     			color: $background-blue;
     			border: 1px solid #8A95A8;
-    			border-radius: 4px;
+    			border-radius: 2px;
     		}
 
     		input::placeholder {

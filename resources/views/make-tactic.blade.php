@@ -53,6 +53,14 @@
 
 @endsection
 
+@section('pagespecificstyles')
+<style>
+	body {
+		overscroll-behavior: none;
+	}
+</style>
+@endsection
+
 @section('pagespecificscripts')
 <script type="text/javascript" src="{{ asset('js/make-tactic.js') }}"></script>
 @endsection

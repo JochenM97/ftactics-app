@@ -25,6 +25,7 @@
 	    <title>{{ config('app.name') }}{{ $title }}</title>
 
 	    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	    @yield('pagespecificstyles')
     </head>
     <body>
     	<!--<div id="orientation-warning"></div>-->

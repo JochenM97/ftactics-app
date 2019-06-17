@@ -203,27 +203,7 @@ for(var i=0; i<object_ids.length; i++)
 	  	field.appendChild(newObject); 
 	}
 
-	var target = document.getElementById(object_ids[i]);
-	var object_frames = [];
-	var timeline_framesX = [];
-	var timeline_framesY = [];
-	for(var y=1; y<x_positions[0].length; y++)
-	{
-		object_frames.push({translateX: (x_positions[i][y]-x_positions[i][0]), translateY: (y_positions[i][y]-y_positions[i][0]), duration: 1000},);
-	    timeline_framesX.push(x_positions[i][y]-x_positions[i][0]);
-	    timeline_framesY.push(y_positions[i][y]-y_positions[i][0]);
-	}
-
-	var backToX = x_positions[i][object_frames.length-1]-x_positions[i][0];
-
-	object_frames.push({translateX: 0, translateY: 0, duration: 2000},);
-  	
-	anime({
-		targets: target,
-		keyframes: object_frames,
-		easing: 'linear',
-		loop: true
-	});
+	
   
   /*
   this.tl.add({
@@ -235,6 +215,139 @@ for(var i=0; i<object_ids.length; i++)
   });
   */
 }
+
+var play = document.getElementById("play-animation");
+var reset = document.getElementById("reset-animation");
+var restart = false;
+
+var animeAnimations = [];
+
+var started = false;
+var startPlaying = false;
+var firsttime = true;
+
+play.addEventListener("click", function() {
+	// eerste keer animatie uitvoeren
+	if(started == false)
+	{
+		startPlaying = true;
+
+		if(firsttime == true)
+		{
+			for(var i=0; i<object_ids.length; i++)
+			{
+				var target = document.getElementById(object_ids[i]);
+				var object_frames = [];
+				var timeline_framesX = [];
+				var timeline_framesY = [];
+				for(var y=1; y<x_positions[0].length; y++)
+				{
+					object_frames.push({translateX: (x_positions[i][y]-x_positions[i][0]), translateY: (y_positions[i][y]-y_positions[i][0]), duration: 1000},);
+				    timeline_framesX.push(x_positions[i][y]-x_positions[i][0]);
+				    timeline_framesY.push(y_positions[i][y]-y_positions[i][0]);
+				}
+
+				//object_frames.push({translateX: 0, translateY: 0, duration: 2000},);
+			  	
+				var myAnimation = anime({
+					targets: target,
+					keyframes: object_frames,
+					easing: 'linear',
+					loop: false,
+					complete: function(anim) {
+					    restart = true;
+					    startPlaying = false;
+					    play.innerHTML = "RESTART";
+					}
+				});
+
+				animeAnimations.push(myAnimation);
+
+			}
+			firsttime = false;
+			play.innerHTML = "PAUSE";
+		}
+		/*
+		else
+		{
+			for(var i=0; i<animeAnimations.length; i++)
+			{
+				animeAnimations[i].restart();
+			}
+		}
+		*/
+
+		started = true;
+		console.log(animeAnimations);
+	}
+
+	// nadat animatie eerste keer werd uitgevoerd
+	else if(started == true)
+	{
+		if(startPlaying == true)
+		{
+			// indien animatie reeds bezig - op pauze zetten
+			play.innerHTML = "RESUME";
+			startPlaying = false;
+			for(var i=0; i<object_ids.length; i++)
+			{
+				animeAnimations[i].pause();
+			}
+		}
+		else 
+		{
+			console.log(restart);
+			play.innerHTML = "PAUSE";
+			if(restart == false) 
+			{
+				for(var i=0; i<animeAnimations.length; i++)
+				{
+					animeAnimations[i].play();
+				}
+			}
+			else
+			{
+				play.innerHTML = "PAUSE";
+				console.log("restart");
+				for(var i=0; i<animeAnimations.length; i++)
+				{
+					animeAnimations[i].restart();
+				}
+				restart = false;
+			}
+			startPlaying = true;
+		}
+	}
+});
+
+reset.addEventListener("click", function() {
+	/*
+	for(var i=0; i<object_ids.length; i++)
+	{
+		var target = document.getElementById(object_ids[i]);
+		var object_frames = [];
+
+		object_frames.push({translateX: 0, translateY: 0, duration: 2000},);
+		anime({
+			targets: target,
+			keyframes: object_frames,
+			easing: 'linear',
+			loop: false
+		});
+				
+	}
+	*/
+	for(var i=0; i<animeAnimations.length; i++)
+	{
+		//animeAnimations[i].paused = false;
+		//animeAnimations[i].update = true;
+		animeAnimations[i].reset();
+	}
+	startPlaying = false;
+	play.innerHTML = "START";
+	//started = false;
+});
+
 
 function countSteps() {
 

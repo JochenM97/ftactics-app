@@ -7,9 +7,37 @@
 <div id="settings-screen">
 	<div id="settings-screen-content">
 		<img id="close-settings-screen" src="{{ URL::to('/') }}/images/icons/cancel.svg" alt="Close save screen button">
-		<div class="delete-box">
+		<div class="settings-actions">
+			<h3>Share link</h3>
+			<div class="copy-box">
+				<input id="copy-link" type="url" value='{{ URL::to("/")."/shared-tactics/{$tactic->id}" }}' readonly="readonly">
+				<button onclick="copyText()">COPY</button>
+			</div>
+			@php
+				$iOS = false;
+				$Android = false;
+
+				if(stripos($_SERVER['HTTP_USER_AGENT'],"iPod")){
+					$iOS = true;
+				}
+				if(stripos($_SERVER['HTTP_USER_AGENT'],"iPhone")){
+					$iOS = true;
+				}
+				if(stripos($_SERVER['HTTP_USER_AGENT'],"iPad")){
+					$iOS = true;
+				}
+
+				if(stripos($_SERVER['HTTP_USER_AGENT'],"Android")){
+					$Android = true;
+				}
+				
+			@endphp
+			@if($iOS || $Android)
+			<span class="or">OR</span>
+			<a class="messenger-link" href='fb-messenger://share/?link= {{ URL::to("/")."/shared-tactics/{$tactic->id}" }}&app_id=1167945663386898'>Send In Messenger</a>
+			@endif
+
 			<a href='{{ url("/delete-tactic/{$tactic->id}") }}' id="delete-btn">DELETE</a>
-			<h3><a href='{{ url("/shared-tactics/{$tactic->id}") }}'>{{ URL::to('/')."/shared-tactics/{$tactic->id}" }}
 		</div>
 	</div>
 </div>
@@ -31,6 +59,11 @@
 
 <div id="stage-parent">
 	<div id="field"></div>
+</div>
+
+<div id="toolbar">
+	<button id="play-animation">START</button>
+	<button id="reset-animation">RESET</button>
 </div>
 
 <script>

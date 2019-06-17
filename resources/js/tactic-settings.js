@@ -18,3 +18,10 @@ settingsBtn.addEventListener("click", function()
 	closeScreenContent.style.display = "block";
 	setTimeout(function(){ closeScreenContent.style.opacity = "1"; }, 100);
 });
+
+function copyText()
+{
+	var copyLink = document.getElementById("copy-link");
+  	copyLink.select();
+  	document.execCommand("copy");
+}
